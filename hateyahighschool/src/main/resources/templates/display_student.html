@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <title>Title</title>
+</head>
+<body>
+
+<center>
+
+    <H2> Display Students </H2>
+
+    <!-- <p th:text="${students}">Not Found !</p> -->
+
+    <div class="container">
+
+        <table class="table table-responsive">
+
+            <th >
+                <td>ID</td>
+                <td>Name</td>
+                <td>Address</td>
+                <td>Delete</td>
+            </th>
+
+            <tr th:each="student : ${students}">
+                <td th:text="${student.id}"/>
+                <td th:text="${student.name}"/>
+                <td th:text="${student.address}"/>
+                <td >
+                    <a th:href="@{delete/__${student.id}__}" class="btn btn-danger">Delete</a>
+                  <!--<form th:action="@{delete2}" method="post">-->
+                      <!--<input type="hidden" name="id" th:value="${student.id}" />-->
+                      <!--<input type="submit" value="Delete" class="btn btn-danger" />-->
+                  <!--</form>-->
+                </td>
+            </tr>
+
+
+
+        </table>
+
+    </div>
+
+</center>
+
+
+
+
+</body>
+</html>
