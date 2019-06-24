@@ -20,6 +20,7 @@ public class HomeController {
 
         DbConnection dbc = new DbConnection();
         model.addAttribute("bol",dbc.getBol());
+        model.addAttribute("ex",dbc.getEx());
         return "home";
     }
 
