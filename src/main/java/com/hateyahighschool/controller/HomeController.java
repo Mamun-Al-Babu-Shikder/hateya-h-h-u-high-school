@@ -1,7 +1,10 @@
 package com.hateyahighschool.controller;
 
+import com.hateyahighschool.dbconnection.DbConnection;
 import org.springframework.stereotype.*;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -13,7 +16,10 @@ public class HomeController {
 
 
     @RequestMapping(value = "/")
-    public String home(){
+    public String home(Model model){
+
+        DbConnection dbc = new DbConnection();
+        model.addAttribute("bol",dbc.getBol());
         return "home";
     }
 
