@@ -45,7 +45,7 @@ public class HomeController {
         Path filePath = Paths.get(uploadDir, file.getOriginalFilename());
         try {
             Files.write(filePath, file.getBytes());
-            model.addAttribute("file_ex",file.getOriginalFilename());
+            model.addAttribute("file_ex",filePath.toAbsolutePath());
         } catch (IOException e) {
             model.addAttribute("file_ex",e);
             e.printStackTrace();
