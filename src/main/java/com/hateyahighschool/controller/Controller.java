@@ -40,6 +40,7 @@ public class Controller {
     @RequestMapping(value = "/home")
     private String home(ModelMap modelMap){
 
+        modelMap.addAttribute("file_ex","mamun.jpg");
         modelMap.addAttribute("login", new Login("aalmamun","123456"));
         modelMap.put("val","mamun");
 

@@ -13,7 +13,14 @@
 <h1> Database Connection : </h1>
 <h1 th:text="${bol}"></h1>
 <h1 th:text="${ex}"></h1>
+<h1 th:text="${file_ex}"></h1>
 
+<img th:src="@{${file_ex}}" alt="upload image here">
+
+<form action="/upload" enctype="multipart/form-data" method="post">
+    <input type="file" name="file">
+    <input type="submit" value="Upload File">
+</form>
 
 </body>
 </html>

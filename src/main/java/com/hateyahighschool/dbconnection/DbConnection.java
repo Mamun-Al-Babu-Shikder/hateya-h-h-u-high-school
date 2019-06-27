@@ -23,15 +23,19 @@ public class DbConnection {
             statement = connection.createStatement();
             System.out.println("Success !");
             bol = true;
+            connection.close();
         } catch (Exception e) {
             bol = false;
-            ex+= ex.toString();
+            ex+= e.toString();
             e.printStackTrace();
         }
 
 
     }
 
+    public Connection getConnection() {
+        return connection;
+    }
 
     public String getEx(){
         return ex;
