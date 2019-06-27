@@ -31,6 +31,7 @@ public class HomeController {
         DbConnection dbc = new DbConnection();
         model.addAttribute("bol",dbc.getBol());
         model.addAttribute("ex",dbc.getEx());
+        model.addAttribute("file_ex","baby.jpg");
         try {
             dbc.getConnection().close();
         } catch (SQLException e) {
