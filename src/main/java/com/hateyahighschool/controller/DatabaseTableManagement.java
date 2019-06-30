@@ -32,7 +32,11 @@ public class DatabaseTableManagement {
     public String open(ModelMap modelMap) {
 
 
+        /*
         try {
+
+
+
             Configuration configuration = new Configuration().configure("hibernate.cfg.xml");//.addAnnotatedClass(User.class);
 
             SessionFactory sf = configuration.buildSessionFactory();
@@ -41,15 +45,15 @@ public class DatabaseTableManagement {
             System.out.println("SF : " + sf);
             System.out.println("Session : " + session);
 
-            //User user = session.get(User.class, 1);
-            //User user2 = session.get(User.class, 1);
+            User user = session.get(User.class, 1);
+            User user2 = session.get(User.class, 2);
 
-        /*
-        List<User> users = new ArrayList<>();
-        users.add(user);
-        users.add(user2);
-        */
-            List<User> users = session.createQuery("FROM User ", User.class).list();
+
+           List<User> users = new ArrayList<>();
+           users.add(user);
+           users.add(user2);
+
+           // List<User> users = session.createQuery("FROM User ", User.class).list();
 
 
             modelMap.put("users", users);
@@ -61,6 +65,24 @@ public class DatabaseTableManagement {
             modelMap.put("ex",ex);
             ex.printStackTrace();
         }
+        */
+
+
+        User user = new User();
+        user.setId(1);
+        user.setEmail("abc@gmail.com");
+        user.setPassword("pass");
+
+        List<User> users = new ArrayList<>();
+        users.add(user);
+
+
+        // List<User> users = session.createQuery("FROM User ", User.class).list();
+
+
+        modelMap.put("users", users);
+
+
 
         return "display_user";
     }
@@ -69,9 +91,11 @@ public class DatabaseTableManagement {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addUser(@RequestParam String email, @RequestParam String pass, ModelMap modelMap)
     {
+        String e = "Ex : ";
+        final User user = new User();
+
         try {
 
-            User user = new User();
             user.setEmail(email);
             user.setPassword(pass);
 
@@ -89,15 +113,20 @@ public class DatabaseTableManagement {
             session.save(user);
             t.commit();
 
+
+
             session.close();
             sf.close();
 
+
         }catch (Exception ex){
+            e+=ex;
             System.out.print("Ex : "+ex);
         }
 
 
-        return "redirect:/open";
+       return "redirect:/open";
+
     }
 
     @RequestMapping(value = "/delete_user/{id}", method = RequestMethod.GET)
