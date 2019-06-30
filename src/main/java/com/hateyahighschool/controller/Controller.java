@@ -1,8 +1,8 @@
 package com.hateyahighschool.controller;
 
 
+import com.hateyahighschool.model.AppUser;
 import com.hateyahighschool.model.Login;
-import com.hateyahighschool.model.User;
 import com.hateyahighschool.service.DatabaseService;
 import org.springframework.http.HttpRequest;
 import org.springframework.ui.ModelMap;
@@ -54,7 +54,7 @@ public class Controller {
         modelMap.addAttribute("val","Username : "+email+", Password : "+password);
 
         try{
-            User user = new User();
+            AppUser user = new AppUser();
             user.setEmail(email);
             user.setPassword(password);
 

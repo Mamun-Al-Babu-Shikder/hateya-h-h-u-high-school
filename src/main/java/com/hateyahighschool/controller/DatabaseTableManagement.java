@@ -3,7 +3,7 @@ package com.hateyahighschool.controller;
 
 import com.fasterxml.classmate.AnnotationConfiguration;
 import com.hateyahighschool.model.Student;
-import com.hateyahighschool.model.User;
+import com.hateyahighschool.model.AppUser;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -32,28 +32,23 @@ public class DatabaseTableManagement {
     public String open(ModelMap modelMap) {
 
 
-        /*
+        //List<User> users = new ArrayList<>();
+
+        Configuration configuration = new Configuration().configure("hibernate.cfg.xml");//.addAnnotatedClass(User.class);
+        SessionFactory sf = configuration.buildSessionFactory();
+        Session session = sf.openSession();
+
         try {
 
-
-
-            Configuration configuration = new Configuration().configure("hibernate.cfg.xml");//.addAnnotatedClass(User.class);
-
-            SessionFactory sf = configuration.buildSessionFactory();
-            Session session = sf.openSession();
 
             System.out.println("SF : " + sf);
             System.out.println("Session : " + session);
 
-            User user = session.get(User.class, 1);
-            User user2 = session.get(User.class, 2);
+            AppUser user = session.get(AppUser.class, 1);
+            AppUser user2 = session.get(AppUser.class, 2);
 
 
-           List<User> users = new ArrayList<>();
-           users.add(user);
-           users.add(user2);
-
-           // List<User> users = session.createQuery("FROM User ", User.class).list();
+            List<AppUser> users = session.createQuery("FROM AppUser ", AppUser.class).list();
 
 
             modelMap.put("users", users);
@@ -64,10 +59,14 @@ public class DatabaseTableManagement {
         }catch (Exception ex){
             modelMap.put("ex",ex);
             ex.printStackTrace();
+        }finally {
+            sf.close();
+            session.close();
         }
-        */
 
 
+
+        /*
         User user = new User();
         user.setId(1);
         user.setEmail("abc@gmail.com");
@@ -75,12 +74,13 @@ public class DatabaseTableManagement {
 
         List<User> users = new ArrayList<>();
         users.add(user);
+        */
 
 
         // List<User> users = session.createQuery("FROM User ", User.class).list();
 
 
-        modelMap.put("users", users);
+        //modelMap.put("users", users);
 
 
 
@@ -92,16 +92,16 @@ public class DatabaseTableManagement {
     public String addUser(@RequestParam String email, @RequestParam String pass, ModelMap modelMap)
     {
         String e = "Ex : ";
-        final User user = new User();
+        final AppUser user = new AppUser();
+
+        Configuration configuration = new Configuration().configure();//.addAnnotatedClass(User.class);
+        SessionFactory sf = configuration.buildSessionFactory();
+        Session session = sf.openSession();
 
         try {
 
             user.setEmail(email);
             user.setPassword(pass);
-
-            Configuration configuration = new Configuration().configure();//.addAnnotatedClass(User.class);
-            SessionFactory sf = configuration.buildSessionFactory();
-            Session session = sf.openSession();
 
             //System.out.println("SF : "+sf);
             //System.out.println("Session : "+session);
@@ -114,7 +114,6 @@ public class DatabaseTableManagement {
             t.commit();
 
 
-
             session.close();
             sf.close();
 
@@ -122,6 +121,9 @@ public class DatabaseTableManagement {
         }catch (Exception ex){
             e+=ex;
             System.out.print("Ex : "+ex);
+        }finally {
+            session.close();
+            sf.close();
         }
 
 

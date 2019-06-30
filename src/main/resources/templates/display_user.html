@@ -54,30 +54,35 @@
 <center>
 
 
-    <table class="table table-responsive" >
+    <div >
 
-        <tr>
-            <th>ID</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Delete</th>
-        </tr>
+        <table class="table table-responsive" >
 
-        <tr th:each="user : ${users}">
-            <td th:text="${user.id}"/>
-            <td th:text="${user.email}"/>
-            <td th:text="${user.password}"></td>
-            <td >
-                <a th:href="@{delete_user/__${user.id}__}" class="btn btn-danger">Delete</a>
-                <!--<form th:action="@{delete2}" method="post">-->
-                <!--<input type="hidden" name="id" th:value="${user.id}" />-->
-                <!--<input type="submit" value="Delete" class="btn btn-danger" />-->
-                <!--</form>-->
-            </td>
-        </tr>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Delete</th>
+            </tr>
+
+            <tr  th:each="user : ${users}">
+                <td th:text="${user.id}"/>
+                <td th:text="${user.email}"/>
+                <td th:text="${user.password}"></td>
+                <td >
+                    <a th:href="@{delete_user/__${user.id}__}" class="btn btn-danger">Delete</a>
+                    <!--<form th:action="@{delete2}" method="post">-->
+                    <!--<input type="hidden" name="id" th:value="${user.id}" />-->
+                    <!--<input type="submit" value="Delete" class="btn btn-danger" />-->
+                    <!--</form>-->
+                </td>
+            </tr>
 
 
-    </table>
+        </table>
+
+    </div>
+
 
 </center>
 

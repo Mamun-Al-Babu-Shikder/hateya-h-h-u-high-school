@@ -29,7 +29,7 @@
         <!--<property name="hibernate.hbm2ddl.auto">update</property>-->
 
 
-        <mapping class="com.hateyahighschool.model.User"/>
+        <mapping class="com.hateyahighschool.model.AppUser"/>
         <mapping class="com.hateyahighschool.model.Student"/>
 
     </session-factory>
