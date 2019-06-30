@@ -134,19 +134,16 @@ public class DatabaseTableManagement {
     @RequestMapping(value = "/delete_user/{id}", method = RequestMethod.GET)
     public String deleteUser(@PathVariable(name = "id") int id, ModelMap modelMap)
     {
+        Configuration configuration = new Configuration().configure();//.addAnnotatedClass(User.class);
+        SessionFactory sf = configuration.buildSessionFactory();
+        Session session = sf.openSession();
 
         try {
 
             // System.out.println("Delete ID: "+id);
 
-            Configuration configuration = new Configuration().configure();//.addAnnotatedClass(User.class);
-
-            SessionFactory sf = configuration.buildSessionFactory();
-            Session session = sf.openSession();
-
-
             Transaction t = session.beginTransaction();
-            session.createSQLQuery("DELETE FROM user WHERE ID = " + id).executeUpdate();
+            session.createSQLQuery("DELETE FROM appuser WHERE ID = " + id).executeUpdate();
             t.commit();
 
 
@@ -168,6 +165,9 @@ public class DatabaseTableManagement {
 
         }catch (Exception ex){
             ex.printStackTrace();
+        }finally {
+            sf.close();
+            session.close();
         }
 
 
