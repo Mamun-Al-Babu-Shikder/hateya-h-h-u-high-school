@@ -23,7 +23,8 @@ import java.sql.SQLException;
 @Controller
 public class HomeController {
 
-    public static String uploadDir = System.getProperty("user.dir")+"/src/main/resources/static";
+    //public static String uploadDir = System.getProperty("user.dir")+"/src/main/resources/static";
+    public static String uploadDir = "https://morejust.herokuapp.com/file";
 
     @RequestMapping(value = "/")
     public String home(Model model){
@@ -31,7 +32,6 @@ public class HomeController {
         DbConnection dbc = new DbConnection();
         model.addAttribute("bol",dbc.getBol());
         model.addAttribute("ex",dbc.getEx());
-        model.addAttribute("file_ex","baby.jpg");
         try {
             dbc.getConnection().close();
         } catch (SQLException e) {

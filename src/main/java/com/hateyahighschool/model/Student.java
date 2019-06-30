@@ -1,12 +1,20 @@
 package com.hateyahighschool.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by A.A.MAMUN on 4/14/2019.
  */
+@Entity
 public class Student {
 
+    @Id
+    @GeneratedValue
     private int id;
-    private String name, address;
+    private String name;
+    private String address;
 
     public Student() {
     }

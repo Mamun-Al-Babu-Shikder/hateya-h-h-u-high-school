@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>USER | DB TEST</title>
+
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+
+
+</head>
+<body>
+
+
+<form action="/add" method="post">
+
+    <table>
+        <tr>
+            <td >
+                Email :
+            </td>
+            <td>
+                <input type="email" placeholder="Enter email address" name="email" required>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                Password :
+            </td>
+            <td>
+                <input type="password" placeholder="Enter password" name="pass" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+
+
+<div th:if="${ex}">
+    <h4 th:text="${ex}"></h4>
+</div>
+
+
+<div th:if="${users}">
+    <p th:text="${users}"></p>
+</div>
+
+<center>
+
+
+    <table class="table table-responsive" >
+
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Delete</th>
+        </tr>
+
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"/>
+            <td th:text="${user.email}"/>
+            <td th:text="${user.password}"></td>
+            <td >
+                <a th:href="@{delete_user/__${user.id}__}" class="btn btn-danger">Delete</a>
+                <!--<form th:action="@{delete2}" method="post">-->
+                <!--<input type="hidden" name="id" th:value="${user.id}" />-->
+                <!--<input type="submit" value="Delete" class="btn btn-danger" />-->
+                <!--</form>-->
+            </td>
+        </tr>
+
+
+    </table>
+
+</center>
+
+
+
+</body>
+</html>

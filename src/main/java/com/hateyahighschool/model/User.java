@@ -1,33 +1,30 @@
 package com.hateyahighschool.model;
 
+
+import org.hibernate.annotations.Entity;
+
 import javax.persistence.*;
 
 /**
  * Created by A.A.MAMUN on 4/14/2019.
  */
-@Entity
-@Table(name = "user")
+@javax.persistence.Entity
 public class User {
 
     @Id
     @GeneratedValue
-    @Column(name = "id")
-    private Long id;
-
-    @Column(name = "email")
+    private Integer id;
     private String email;
-
-    @Column(name = "password")
     private String password;
 
     public User() {
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -45,5 +42,15 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
