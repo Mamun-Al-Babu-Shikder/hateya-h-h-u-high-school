@@ -1,35 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org" >
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
 <head>
+    <title>LOGIN | CPANEL</title>
 
-    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
-
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/cpanel.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+        type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
 </head>
-<body>
 
-<p th:if="${val==null}"> Null value </p>
-<p  th:text="${val}"> Data not found !</p>
+<body style="background: #F6FAFB;">
 
-<form th:action="@{user/login}" class="form-group-sm"  method="post"  >
+    <center>
 
-    <table >
-        <tr>
-            <td> Username </td>
-            <td> <input type="text" name="email"   class="form-group-sm input-group text-primary"  /> </td>
-        </tr>
-        <tr>
-            <td> Password </td>
-            <td> <input type="password" class="text-primary" name="password"   /> </td>
-        </tr>
-        <tr>
-            <td> <input class="btn btn-primary" type="submit" value="Login" /> </td>
-        </tr>
-    </table>
+        <h4 style="margin-top: 80px; color: rgb(136, 136, 136);"> Please login at first to update information as an ADMIN.</h4>
 
-</form>
+
+        <p style="margin: 4px 0px 0px 6px; font-size: 11px; color: rgb(172, 172, 172);">Log in to get going.</p>
+        
+        <div class="login-box">
+            <div  style="width: 100%; height: 60px; background: #777; border-radius: 3px 3px 0px 0px;">
+               <h2 style= " margin:0px; padding: 15px 0px; color:rgb(255, 251, 24);" > cPanel </h2>
+            </div>
+
+            <form  action="/login" method="post">
+
+                <div style="width: 100%; padding: 30px;">
+ 
+                    
+                     <p th:text="${login_error}" style="color: red; font-size: 12px;"></p>
+
+                    <input  type="email" class="text-box" name="email" placeholder="Enter email" required/>
+                    <input  type="password" class="text-box" name="password" placeholder="Enter password" required/>
+                    <div style="display: flex; margin-top: 15px;" >
+                          <input type="checkbox" class="check-box"  value=""/>  <p style="margin: 2px 0px 0px 5px; font-size: 11px;">  Remember me </p>
+                    </div>
+                    
+                    <input type="submit" value="Login" class="login-bnt"/>
+
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </center>
+
+
+
+
+
+
+
+
 
 </body>
+
 </html>

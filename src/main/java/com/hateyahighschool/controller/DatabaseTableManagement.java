@@ -10,10 +10,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.management.Query;
 import java.util.ArrayList;
@@ -28,7 +25,7 @@ import java.util.Map;
 @Controller
 public class DatabaseTableManagement {
 
-    @RequestMapping(value = "open")
+    @GetMapping(value = "/open")
     public String open(ModelMap modelMap) {
 
 
@@ -89,7 +86,7 @@ public class DatabaseTableManagement {
 
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addUser(@RequestParam String email, @RequestParam String pass, ModelMap modelMap)
+    public String addUser(@RequestParam String email, @RequestParam String pass)
     {
         String e = "Ex : ";
         final AppUser user = new AppUser();
@@ -131,8 +128,8 @@ public class DatabaseTableManagement {
 
     }
 
-    @RequestMapping(value = "/delete_user/{id}", method = RequestMethod.GET)
-    public String deleteUser(@PathVariable(name = "id") int id, ModelMap modelMap)
+    @RequestMapping(value = "/delete_user", method = RequestMethod.POST)
+    public String deleteUser(@RequestParam int id, ModelMap modelMap)
     {
         Configuration configuration = new Configuration().configure();//.addAnnotatedClass(User.class);
         SessionFactory sf = configuration.buildSessionFactory();

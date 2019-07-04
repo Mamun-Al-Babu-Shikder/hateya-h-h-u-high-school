@@ -70,11 +70,11 @@
                 <td th:text="${user.email}"/>
                 <td th:text="${user.password}"></td>
                 <td >
-                    <a th:href="@{delete_user/__${user.id}__}" class="btn btn-danger">Delete</a>
-                    <!--<form th:action="@{delete2}" method="post">-->
-                    <!--<input type="hidden" name="id" th:value="${user.id}" />-->
-                    <!--<input type="submit" value="Delete" class="btn btn-danger" />-->
-                    <!--</form>-->
+                    <!--<a th:href="@{delete_user/__${user.id}__}" class="btn btn-danger">Delete</a>-->
+                    <form th:action="@{delete_user}" method="post">
+                    <input type="hidden" name="id" th:value="${user.id}" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    </form>
                 </td>
             </tr>
 

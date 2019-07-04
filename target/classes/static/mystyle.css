@@ -1,0 +1,241 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  }
+
+
+  .navbar-default {
+    margin: 0px;
+    background: #2A2E49;
+    border: #2A2E49;
+    border-radius: 0px;
+
+  }
+
+  .navbar-default .navbar-nav li a {
+    color: #fff;
+  }
+
+
+  .navbar-default .navbar-nav li:hover,
+  .navbar-default .navbar-nav li a:hover {
+    background: rgb(221, 25, 84);
+    color: #fff;
+  }
+
+
+  .active-opt{   
+    background: rgb(221, 25, 84);
+    color: #fff;
+  }
+
+  .banner-div{
+    margin: 0px;
+    height: 550px;
+    background-size: cover;
+    box-shadow: 0px 0px 0px 0px gray;
+    position: relative;
+    background-image: url("images/bk1.png");
+  }
+
+  .banner-overlay{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    background-color: rgba(42, 46, 73, 0.879);
+    align-items: center;
+  }
+
+  .tour-btn{
+    background-color: #DD1954;
+    color: #fff;
+    border: 1.5px solid #DD1954;
+    border-radius:7px;
+    padding: 10px 20px 10px 20px;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .tour-btn:hover{
+    background-color: transparent;
+    border: 1.5px solid #DD1954;
+    color: #fff;
+    border-radius:7px;
+    padding: 10px 20px 10px 20px;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+
+
+
+  .cls-info{
+    
+    padding: 5px;
+    text-align: center;
+
+  }
+
+  .cls-info-div{
+    padding: 5px;
+    border: 1px solid rgb(218, 218, 218);
+    min-height: 500px;
+    text-align: center;
+
+  }
+
+  .cir-shp-yellow{
+    margin-top: -50px;
+    background: #FED136;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 75px;
+    text-align: center;
+  }
+  
+  .mycard{
+    
+    margin:50px 0px 10px 0px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    
+  }
+
+  
+
+  .res-img{
+    width: 100%;
+    height: auto;
+  }
+
+  .all-t-holder{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  
+  }
+
+  .t-img-holder{
+    overflow: hidden;
+  }
+
+  .t-img{
+    margin-top: -50px;
+    width: 120px;
+    height: 120px;
+    border: 4px solid rgb(230, 230, 230);
+  }
+
+  .t-img:hover{
+    margin-top: -50px;
+    width: 120px;
+    height: 120px;
+    border: 4px solid rgb(230, 230, 230);
+    box-shadow: 0px 7px 7px #ccc;
+
+  }
+
+  .t-title{
+    font-size: 14px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 10px 5px 0px 5px;
+  }
+
+  .t-deg{
+    margin: 0px 5px 0px 5px;
+    font-family: 'Times New Roman', Times, serif;
+  
+  }
+
+  .t-description{
+
+    text-align: center;
+    font-size: 13px;
+    margin: 10px 10px 10px 10px;
+    
+    
+  
+  }
+
+  .fb-twt-logo{
+    margin: 10px 10px 10px 5px;
+    width: 15%;
+  }
+
+  .fb-twt-logo:hover{
+    margin: 10px 10px 10px 5px;
+    width: 15%;
+    box-shadow: 3px 7px 7px #aaa;
+  }
+
+
+
+
+
+
+
+
+  .login-box{
+
+    margin-top: 10px;
+   
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    width: 20%;
+    min-width: 350px;
+    box-shadow: 2px 3px 3px  #EDF2F7;
+
+  }
+
+  .text-box{
+
+    width: 100%;
+    font-size: 13px;
+    padding: 10px;
+    margin-top: 15px;
+    height: 35px;
+    border: 1px solid #3BD788;
+    border-radius: 4px;
+    outline: none !important;
+  
+  }
+
+
+  .check-box{
+    background: #3BD788;
+  }
+
+  .login-bnt{
+    color: #fff;
+    width: 100%;
+    height: 35px;
+    margin-top: 15px;
+    background: #3BD788;
+    border-radius: 5px;
+    outline: none !important;
+    border: none;
+  }
+
+  .login-bnt:hover{
+    color: #fff;
+    width: 100%;
+    height: 35px;
+    margin-top: 15px;
+    background: rgb(20, 190, 105);
+    border-radius: 5px;
+    outline: none !important;
+    border: none;
+  }
+  
+
+
+
+
+  

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" >
+
+<head>
+  <title>Bootstrap Example</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+
+
+
+  <script>
+
+    $(document).ready(function () {
+
+      $(".menubtn").click(function () {
+        $(".menu-items").toggle(400);
+      });
+
+    });
+
+  </script>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+  <nav id="home-id" class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container-fluid">
+
+      <!-- BRAND -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#alignment-example"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <p class="navbar-brand"
+          style="margin: 0px;  color: #fed136;
+        font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; ">
+          Hateya H.H.U high school</p>
+      </div>
+      <!-- COLLAPSIBLE NAVBAR -->
+      <div class="collapse navbar-collapse " id="alignment-example">
+        <!-- Links -->
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="active-opt" href="index.html">HOME</a></li>
+          <li><a href="#about-id">NOTICE</a></li>
+          <li><a href="#about-id">ABOUT</a></li>
+          <li><a href="#">TEACHER</a></li>
+          <li><a href="#">RESULT</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+
+
+
+
+  <div class="banner-div">
+    <div align="center" class="banner-overlay ">
+        <h1 style="margin-top: 200px; color: #fff;"> WELCOME TO</h1>
+        <h1 style="color: #fff;"> HATEYA H.H.U HIGH SCHOOL </h1>
+        <p style="color: #fff; padding: 0px 50px 0px 50px;"> An academic institute located at Hateya Sakhipur, Tangail.
+          Established in 01 Jan, 1964. EIIN : 114596</p>
+        <button class="tour-btn" type="button">TAKE A TOUR </button>
+    </div>
+  </div>
+
+
+
+  <br>
+
+  <div id="about-id">
+    <center>
+      <h2  style="color: #11CBD7;"  class="text-uppercase"> CLASSES </h2>
+    </center>
+  </div>
+
+
+
+ 
+  <div class="container " style="margin-top: 50px;">
+
+    <div class="row text-center">
+
+      <div class="col-sm-3 col-xs-6 cls-info">
+        <div class="cls-info-div">
+          <p  style="font-size: 40px; padding:30px  0px 0px 0px; color:#555;"> VI </p>
+          <h4>CLASS - 6</h4>
+          <hr/>
+          <p>hfghdl dhodho d o ihj</p>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-xs-6 cls-info">
+        <div class="cls-info-div">
+          <p  style="font-size: 40px; padding:30px  0px 0px 0px; color:#555;"> VII </p>
+          <h4>CLASS - 7</h4>
+          <hr/>
+          <p>hfghdl dhodho d o ihj</p>
+        </div>
+      </div>
+
+
+      <div class="col-sm-3 col-xs-6 cls-info">
+        <div class="cls-info-div">
+          <p  style="font-size: 40px; padding:30px  0px 0px 0px; color:#555;"> VIII </p>
+          <h4>CLASS - 8</h4>
+          <hr/>
+          <p>hfghdl dhodho d o ihj</p>
+        </div>
+      </div>
+
+
+      <div class="col-sm-3 col-xs-6 cls-info">
+        <div class="cls-info-div">
+          <p  style="font-size: 40px; padding:30px  0px 0px 0px; color:#555;"> IX & X </p>
+          <h4>CLASS - 9 & 10</h4>
+          <hr/>
+          <p>hfghdl dhodho d o ihj</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div id="about-id">
+    <center>
+      <h2  style="color: #11CBD7;"  class="text-uppercase"> TEACHER </h2>
+    </center>
+  </div>
+
+
+
+
+  <div class="all-t-holder">
+    
+
+
+      <div class="container">
+
+          <div class="row justify-content-center text-center">
+    
+    
+              <div class="col-xs-6 col-md-3 col-lg-3">
+                
+                  <div class="mycard" align="center">
+    
+                      <img src="images/mamun.jpg" class="img-circle img-responsive t-img" alt="s1" />
+                  
+                    <p class="t-title">Abdullah-Al-Mamun</p>
+                    <p class="t-deg">(Head Teacher)</p>
+                    <p class="t-description"> Njkhshgjk sjhg jskhdgjkshjdgkshdjkg hsjkhgjksh gjkshgjkshjkg hskjhg jskhgjksdh gjkshdgjkhsdjkg hsjdk h
+                      dfgjhdfjghdfhgkjlike </p>
+                    <div style="text-align: center; padding:10px; ">
+                      <p> Phone : +8801686187164</p>
+                      <div align="center">
+                        <a href="https://www.facebook.com" target="blank" > <img src="images/fb_logo.png" class="fb-twt-logo img-circle" > </a> 
+                        <a href="https://www.facebook.com" target="blank" > <img src="images/witter_logo.png" class="fb-twt-logo img-circle" /> </a>
+                        <a href="https://www.facebook.com" target="blank" ><img src="images/gmail_logo.png" class="fb-twt-logo img-circle" /> </a>
+                        <a href="https://www.facebook.com" target="blank" > <img src="images/linkedin_logo.png" class="fb-twt-logo img-circle" /> </a>
+                      </div>
+                      
+                    </div>
+                    </div>
+                </div>
+    
+    
+    
+                <div class="col-xs-6 col-md-3 col-lg-3 col-xs-12">
+                
+                    <div class="mycard" align="center">
+      
+                      <img src="images/manna.jpg" class="img-circle img-responsive t-img" alt="s1" />
+                      <p class="t-title">Abdullah-Al-Mamun</p>
+                      <p class="t-deg">(Head Teacher)</p>
+                      <p class="t-description"> Njkhshgjk sjhg jskhdgjkshjdgkshdjkg hsjkhgjksh gjkshgjkshjkg hskjhg jskhgjksdh gjkshdgjkhsdjkg hsjdk h
+                        dfgjhdfjghdfhgkjlike </p>
+                      <div style="text-align: center; padding:10px; ">
+                        <p> Phone : +8801686187164</p>
+                        <div align="center">
+                          <a href="https://www.facebook.com" target="blank" > <img src="images/fb_logo.png" class="fb-twt-logo img-circle" > </a> 
+                          <a href="https://www.facebook.com" target="blank" > <img src="images/witter_logo.png" class="fb-twt-logo img-circle" /> </a>
+                          <a href="https://www.facebook.com" target="blank" ><img src="images/gmail_logo.png" class="fb-twt-logo img-circle" /> </a>
+                          <a href="https://www.facebook.com" target="blank" > <img src="images/linkedin_logo.png" class="fb-twt-logo img-circle" /> </a>
+                        </div>
+                        
+                      </div>
+                      </div>
+                  </div>
+    
+                  <div class="col-xs-6 col-md-3 col-lg-3 col-xs-12">
+                
+                      <div class="mycard" align="center">
+        
+                        <img src="images/mamun.jpg" class="img-circle img-responsive t-img" alt="s1" />
+                        <p class="t-title">Abdullah-Al-Mamun</p>
+                        <p class="t-deg">(Head Teacher)</p>
+                        <p class="t-description"> Njkhshgjk sjhg jskhdgjkshjdgkshdjkg hsjkhgjksh gjkshgjkshjkg hskjhg jskhgjksdh gjkshdgjkhsdjkg hsjdk h
+                          dfgjhdfjghdfhgkjlike </p>
+                        <div style="text-align: center; padding:10px; ">
+                          <p> Phone : +8801686187164</p>
+                          <div align="center">
+                            <a href="https://www.facebook.com" target="blank" > <img src="images/fb_logo.png" class="fb-twt-logo img-circle" > </a> 
+                            <a href="https://www.facebook.com" target="blank" > <img src="images/witter_logo.png" class="fb-twt-logo img-circle" /> </a>
+                            <a href="https://www.facebook.com" target="blank" ><img src="images/gmail_logo.png" class="fb-twt-logo img-circle" /> </a>
+                            <a href="https://www.facebook.com" target="blank" > <img src="images/linkedin_logo.png" class="fb-twt-logo img-circle" /> </a>
+                          </div>
+                          
+                        </div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="col-xs-6 col-md-3 col-lg-3 col-xs-12">
+                
+                        <div class="mycard" align="center">
+          
+                          <img src="images/mamun.jpg" class="img-circle img-responsive t-img" alt="s1" />
+                          <p class="t-title">Abdullah-Al-Mamun</p>
+                          <p class="t-deg">(Head Teacher)</p>
+                          <p class="t-description"> Njkhshgjk sjhg jskhdgjkshjdgkshdjkg hsjkhgjksh gjkshgjkshjkg hskjhg jskhgjksdh gjkshdgjkhsdjkg hsjdk h
+                            dfgjhdfjghdfhgkjlike </p>
+                          <div style="text-align: center; padding:10px; ">
+                            <p> Phone : +8801686187164</p>
+                            <div align="center">
+                              <a href="https://www.facebook.com" target="blank" > <img src="images/fb_logo.png" class="fb-twt-logo img-circle" > </a> 
+                              <a href="https://www.facebook.com" target="blank" > <img src="images/witter_logo.png" class="fb-twt-logo img-circle" /> </a>
+                              <a href="https://www.facebook.com" target="blank" ><img src="images/gmail_logo.png" class="fb-twt-logo img-circle" /> </a>
+                              <a href="https://www.facebook.com" target="blank" > <img src="images/linkedin_logo.png" class="fb-twt-logo img-circle" /> </a>
+                            </div>
+                            
+                          </div>
+                          </div>
+                      </div>
+    
+    
+    
+                      <div class="col-xs-6 col-md-3 col-lg-3 col-xs-12">
+                
+                          <div class="mycard" align="center">
+            
+                            <img src="images/mamun.jpg" class="img-circle img-responsive t-img" alt="s1" />
+                            <p class="t-title">Abdullah-Al-Mamun</p>
+                            <p class="t-deg">(Head Teacher)</p>
+                            <p class="t-description"> Njkhshgjk sjhg jskhdgjkshjdgkshdjkg hsjkhgjksh gjkshgjkshjkg hskjhg jskhgjksdh gjkshdgjkhsdjkg hsjdk h
+                              dfgjhdfjghdfhgkjlike </p>
+                            <div style="text-align: center; padding:10px; ">
+                              <p> Phone : +8801686187164</p>
+                              <div align="center">
+                                <a href="https://www.facebook.com" target="blank" > <img src="images/fb_logo.png" class="fb-twt-logo img-circle" > </a> 
+                                <a href="https://www.facebook.com" target="blank" > <img src="images/witter_logo.png" class="fb-twt-logo img-circle" /> </a>
+                                <a href="https://www.facebook.com" target="blank" ><img src="images/gmail_logo.png" class="fb-twt-logo img-circle" /> </a>
+                                <a href="https://www.facebook.com" target="blank" > <img src="images/linkedin_logo.png" class="fb-twt-logo img-circle" /> </a>
+                              </div>
+                              
+                            </div>
+                            </div>
+                        </div>
+            
+              
+              
+      
+            
+    
+    
+      
+          </div>
+    
+    
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+ 
+   
+
+
+ 
+
+
+
+
+
+</body>
+
+</html>

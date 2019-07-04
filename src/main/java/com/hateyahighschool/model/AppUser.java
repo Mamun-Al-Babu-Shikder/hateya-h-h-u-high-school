@@ -1,14 +1,12 @@
 package com.hateyahighschool.model;
 
 
-import org.hibernate.annotations.Entity;
-
 import javax.persistence.*;
 
 /**
  * Created by A.A.MAMUN on 4/14/2019.
  */
-@javax.persistence.Entity
+@Entity
 public class AppUser {
 
     @Id

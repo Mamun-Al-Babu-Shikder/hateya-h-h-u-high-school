@@ -24,22 +24,17 @@ import java.sql.SQLException;
 public class HomeController {
 
     //public static String uploadDir = System.getProperty("user.dir")+"/src/main/resources/static";
-    public static String uploadDir = "https://morejust.herokuapp.com/file";
+    //public static String uploadDir = "https://morejust.herokuapp.com/file";
 
     @RequestMapping(value = "/")
     public String home(Model model){
-
-        DbConnection dbc = new DbConnection();
-        model.addAttribute("bol",dbc.getBol());
-        model.addAttribute("ex",dbc.getEx());
-        try {
-            dbc.getConnection().close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return "home";
+        return "index";
     }
 
+
+
+
+    /*
     @RequestMapping(value = "/upload")
     public String uploadFile(@RequestParam MultipartFile file, Model model)
     {
@@ -53,6 +48,7 @@ public class HomeController {
         }
         return "home";
     }
+    */
 
 
 
