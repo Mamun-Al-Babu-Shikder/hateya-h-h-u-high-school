@@ -40,7 +40,7 @@ public class Controller {
     }
 
 
-    @RequestMapping(value = "/home")
+    @RequestMapping(value = "/home2")
     private String home(ModelMap modelMap, HttpServletRequest request){
 
         if(request.getSession().getAttribute("login_email")!=null) {
@@ -55,7 +55,7 @@ public class Controller {
         }
     }
 
-    @RequestMapping(value = "/login")
+    @RequestMapping(value = "/login2")
     public String loginPage(HttpServletRequest request)
     {
         System.out.println(request.getSession().getAttribute("login_email"));
