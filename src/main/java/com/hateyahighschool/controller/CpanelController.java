@@ -44,7 +44,11 @@ public class CpanelController {
         return "login";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    
+    
+    
+    
+     @RequestMapping(value = "/login", method = RequestMethod.POST)
     private String login(@RequestParam String email, @RequestParam String password, ModelMap modelMap, HttpServletRequest request){
 
         configuration = new Configuration().configure();
@@ -56,6 +60,7 @@ public class CpanelController {
 
            AppUser appUser = session.createQuery("FROM AppUser",AppUser.class).getSingleResult();
             if (appUser != null) {
+                System.out.println("AppUser : "+appUser.toString());
                 if(appUser.getPassword().equals(password)){
                     request.getSession().setAttribute("login_email", email);
                     //request.getSession().setMaxInactiveInterval(request.getSession().getMaxInactiveInterval());
@@ -66,7 +71,8 @@ public class CpanelController {
             }
         }catch(Exception ex){
             modelMap.put("login_error", "Email or password is wrong, please try again with another one.");
-            //ex.printStackTrace();
+            System.out.println("Exception:-------------------------------------------------------------\n");
+            ex.printStackTrace();
         }finally {
             transaction.commit();
             session.close();
@@ -75,8 +81,10 @@ public class CpanelController {
 
         return "login";
     }
-
-
+    
+    
+    
+    
     @RequestMapping(value = "/logout")
     private String logout(HttpServletRequest request) {
         request.getSession().invalidate();
