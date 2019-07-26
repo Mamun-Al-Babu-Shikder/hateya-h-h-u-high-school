@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+
+
+    <title th:if="${access_class==6}"> CLASS | 6 </title>
+    <title th:if="${access_class==7}"> CLASS | 7 </title>
+    <title th:if="${access_class==8}"> CLASS | 8 </title>
+    <title th:if="${access_class==9}"> CLASS | 9 </title>
+    <title th:if="${access_class==10}"> CLASS | 10 </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+        type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        a {
+            font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        }
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#myModal").on("hidden.bs.modal", function () {
+                $("#iframeYoutube").attr("src", "#");
+            })
+        })
+
+        function changeVideo(vId) {
+            var iframe = document.getElementById("iframeYoutube");
+            iframe.src = "https://www.youtube.com/embed/" + vId;
+
+            $("#myModal").modal("show");
+        }
+    </script>
+
+
+
+</head>
+
+<body>
+
+
+
+    <nav id="home-id" class="navbar navbar-default navbar-fixed-top">
+
+        <div class="container-fluid">
+
+            <!-- BRAND -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#alignment-example" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <p class="navbar-brand"
+                    style="margin: 0px;  color: #fed136;
+        font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; ">
+                    Hateya H.H.U high school</p>
+            </div>
+            <!-- COLLAPSIBLE NAVBAR -->
+            <div class="collapse navbar-collapse " id="alignment-example">
+                <!-- Links -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle active-opt" data-toggle="dropdown"> CLASSES
+                            <span class="caret"></span></a>
+
+                        <!--<th:block th:if="${access_class==6}">-->
+                                <!--<ul class="dropdown-menu ">-->
+                                    <!--<li><a class="active-opt" href="class-6">CLASS-6</a></li>-->
+                                    <!--<li><a href="class-7">CLASS-7</a></li>-->
+                                    <!--<li><a href="class-8">CLASS-8</a></li>-->
+                                    <!--<li><a href="class-9">CLASS-9</a></li>-->
+                                    <!--<li><a href="class-10">CLASS-10</a></li>-->
+                                <!--</ul>-->
+                        <!--</th:block>-->
+
+                        <!--<th:block th:if="${access_class==7}">-->
+                            <!--<ul class="dropdown-menu ">-->
+                                <!--<li><a  href="class-6">CLASS-6</a></li>-->
+                                <!--<li><a class="active-opt" href="class-7">CLASS-7</a></li>-->
+                                <!--<li><a href="class-8">CLASS-8</a></li>-->
+                                <!--<li><a href="class-9">CLASS-9</a></li>-->
+                                <!--<li><a href="class-10">CLASS-10</a></li>-->
+                            <!--</ul>-->
+                        <!--</th:block>-->
+
+                        <ul class="dropdown-menu ">
+                            <li><a th:class="${access_class==6} ? 'active-opt' : 'null'" href="/class-6">CLASS-6</a></li>
+                            <li><a th:class="${access_class==7} ? 'active-opt' : 'null'" href="/class-7">CLASS-7</a></li>
+                            <li><a th:class="${access_class==8} ? 'active-opt' : 'null'" href="/class-8">CLASS-8</a></li>
+                            <li><a th:class="${access_class==9} ? 'active-opt' : 'null'" href="/class-9">CLASS-9</a></li>
+                            <li><a th:class="${access_class==10} ? 'active-opt' : 'null'" href="/class-10">CLASS-10</a></li>
+                        </ul>
+
+
+                    <li><a href="#">STAFF</a></li>
+                    <li><a href="#">LIBRARY</a></li>
+                    <li><a href="#">RESULT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+
+
+    <div class="about-banner" th:style="'background: url(images/bk1.PNG) ; background-size: cover'" align="center">
+        <div class="about-banner-over">
+
+            <h1 style="padding-top: 80px; color: #fff;" > CLASS - <span th:text="${access_class}"></span></h1>
+            <p style="padding-top: 8px; color: #fff;"> LET'S TRY TO KNOW ABOUT CLASS - <span th:text="${access_class}"></span> OF 'HATEYA H.H.U HIGH SCHOOL'.
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+    <!--Main body-->
+    <div class="container" style="margin-top: 50px;">
+
+        <div class="row">
+
+            <div class="col-sm-8">
+
+                <div style="margin-top: 0px; height: 40px;;">
+                    <center>
+                        <h3 class="text-uppercase header-text"> BOOK REFERENCE </h3>
+                    </center>
+                </div>
+
+
+                <div th:if="${bookList!=null}">
+
+                <h4>
+                    চলতি শিক্ষাবর্ষের মাধ্যমিক স্তরের
+                    <span th:if="${access_class==6}"> ষষ্ঠ </span>
+                    <span th:if="${access_class==7}"> সপ্তম </span>
+                    <span th:if="${access_class==8}"> অষ্টম </span>
+                    <span th:if="${access_class==9}"> নবম </span>
+                    <span th:if="${access_class==10}"> দশম </span>
+                    শ্রেণির বইয়ের পাঠ্যপুস্তক :
+                </h4>
+
+                    <table class="table table-bordered">
+                        <tr>
+                            <th style="text-align: center">
+                                SL NO.
+                            </th>
+                            <th style="text-align: center">
+                                Name of book
+                            </th>
+                            <th style="text-align: center;">
+                                PDF file
+                            </th>
+                        </tr>
+
+                        <tr  th:each="book ,i : ${bookList}">
+                            <td style="text-align: center" th:text="${i.index}+1"/>
+                            <td  th:text="${book.bookName}"/>
+                            <td style="text-align: center;">
+                                <a th:href="${book.pdfFileLink}" target="_blank"><img src="images/pdf.png"></a>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+
+
+                <div th:if="${classRoutinesList!=null}">
+
+                <div style="margin-top: 50px; height: 40px;;">
+                    <center>
+                        <h3 class="text-uppercase header-text"> CLASS ROUTINE </h3>
+                    </center>
+                </div>
+
+                <table class="table table-bordered">
+
+                    <tr>
+                        <th style="text-align: center">Day/Hour</th>
+                        <th style="text-align: center;">1st</th>
+                        <th style="text-align: center;">2nd</th>
+                        <th style="text-align: center;">3rd</th>
+                        <th style="text-align: center;">4th</th>
+                        <th style="text-align: center;">5th</th>
+                        <th style="text-align: center;">6th</th>
+                    </tr>
+
+                    <tr th:each="value : ${classRoutinesList}">
+                        <td style="text-align: center">
+                            <strong><p th:text="${value.day}"></p></strong>
+                        </td>
+                        <td style="text-align: center" th:text="${value.one}"/>
+                        <td style="text-align: center" th:text="${value.two}"/>
+                        <td style="text-align: center" th:text="${value.three}"/>
+                        <td style="text-align: center" th:text="${value.four}"/>
+                        <td style="text-align: center" th:text="${value.five}"/>
+                        <td style="text-align: center" th:text="${value.six}"/>
+
+                    </tr>
+
+                </table>
+
+                </div>
+
+
+
+                <div th:if="${examRoutineList!=null}">
+
+
+                    <div style="margin-top: 50px; height: 40px;;">
+                        <center>
+                            <h3 class="text-uppercase header-text"> EXAM ROUTINE </h3>
+                        </center>
+                    </div>
+
+                    <table class="table table-bordered">
+
+
+                        <tr>
+                            <th style="text-align: center">
+                                Date
+                            </th>
+                            <th style="text-align: center">
+                                Subject
+                            </th>
+                            <th  style="text-align: center;">
+                                Start Time
+                            </th>
+                            <th style="text-align: center;">
+                                End Time
+                            </th>
+                        </tr>
+
+                        <tr th:each="value : ${examRoutineList}">
+
+                            <td style="text-align: center" th:text="${value.date}"/>
+                            <td style="text-align: center" th:text="${value.subject}"/>
+                            <td style="text-align: center" th:text="${value.startTime}"/>
+                            <td style="text-align: center" th:text="${value.endTime}"/>
+
+                        </tr>
+
+                    </table>
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div class="col-sm-4">
+
+
+                <div align="center">
+                    <h5 class="top-title">
+                        SYLLABUS
+                    </h5>
+                    <a href="">
+                        <h5>
+                            চলতি শিক্ষাবর্ষের মাধ্যমিক স্তরের
+                            <span th:if="${access_class==6}"> ষষ্ঠ </span>
+                            <span th:if="${access_class==7}"> সপ্তম </span>
+                            <span th:if="${access_class==8}"> অষ্টম </span>
+                            <span th:if="${access_class==9}"> নবম </span>
+                            <span th:if="${access_class==10}"> দশম </span>
+                            শ্রেণির সিলেবাস।
+                        </h5>
+                    </a>
+                </div>
+
+                <div th:if="${classLecturesList!=null}">
+
+                   <div style="margin-top: 25px;">
+
+                      <h5 class="top-title">
+                        CLASS LECTURE
+                      </h5>
+
+                      <ul class="tutorial-content" th:each="value:${classLecturesList}">
+                         <li>
+                             <img src="images/youtube.png" style="width: 7%">
+                             <a th:attr="onclick=|changeVideo('${value.link}')|"  th:text="${value.title}"></a>
+                         </li>
+                     </ul>
+
+
+                    </div>
+
+                </div>
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+
+                                    <iframe id="iframeYoutube" width="100%" height="315"
+                                        src="https://www.youtube.com/embed/e80BbX05D7Y" frameborder="0" allowfullscreen>
+                                    </iframe>
+
+                                </div>
+                                <!-- <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                <div th:if="${examResultList!=null}">
+
+                    <div style="margin-top: 25px;">
+                        <h5 class="top-title">
+                            RESULT
+                        </h5>
+
+                        <ul class="tutorial-content" th:each="value : ${examResultList}">
+                            <li>
+                                <a th:href="${value.link}" target="_blank" th:text="${value.title}">
+                                    <img src="images/pdf.png" style="width: 7%;" >
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--fotter-->
+    <footer>
+        <div class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="footer-content">
+                            <div class="footer-head">
+                                <div class="footer-logo">
+                                    <h4>Social media</h4>
+                                </div>
+
+                                <p>
+                                    You can connect with us by social media like facebook, twitter, etc. To connect with
+                                    us by social
+                                    media please visite the following link.
+
+
+                                </p>
+                                <div class="footer-icons">
+                                    <ul>
+                                        <li>
+                                            <a th:href="${footer_social_media_facebook}" target="_blank"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a th:href="${footer_social_media_twitter}" target="_blank"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a th:href="${footer_social_media_linkedin}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end single footer -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="footer-content">
+                            <div class="footer-head">
+                                <h4>Information</h4>
+                                <p>
+                                    To more know about our school, you can contract with following mobile number or
+                                    email.
+                                </p>
+                                <div class="footer-contacts">
+                                    <p ><span>Tel:</span> <u th:text="${footer_information_tel}"></u> </p>
+                                    <p ><span>Email:</span> <u th:text="${footer_information_email}"></u> </p>
+                                    <p><span>Working Hours:</span> 9am-5pm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end single footer -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="footer-content">
+                            <div class="footer-head">
+                                <h4>Photo gallery</h4>
+                                <div class="flicker-img">
+
+                                    <div class="raw">
+
+                                        <div class="col-xs-4">
+                                            <a href="photo_gallery.html"> <img style="cursor:pointer"
+                                                    class="img-thumbnail" src="images/portfolio/1.jpg" alt=""> </a>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a href="photo_gallery.html"> <img class="img-thumbnail"
+                                                    src="images/portfolio/2.jpg" alt=""> </a>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a href="photo_gallery.html"> <img class="img-thumbnail"
+                                                    src="images/portfolio/3.jpg" alt=""> </a>
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <a href="photo_gallery.html"> <img class="img-thumbnail"
+                                                    src="images/portfolio/4.jpg" alt=""> </a>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a href="photo_gallery.html"> <img class="img-thumbnail"
+                                                    src="images/portfolio/5.jpg" alt=""> </a>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a href="photo_gallery.html"> <img class="img-thumbnail"
+                                                    src="images/portfolio/6.jpg" alt=""> </a>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-area-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; Copyright <strong>Hateya H.H.U High School</strong>. All Rights Reserved
+                            </p>
+                        </div>
+                        <div class="credits">
+                            <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
+                -->
+                            Developed by <a href="https://bootstrapmade.com/">Abdullah-Al-Mamun</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+</body>
+
+</html>

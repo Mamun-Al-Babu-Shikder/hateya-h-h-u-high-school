@@ -10,16 +10,14 @@ import javax.persistence.*;
 public class AppUser {
 
     @Id
-    @SequenceGenerator(name="third_party_seq", sequenceName="third_party_seq",allocationSize=1)
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="third_party_seq")
+    @SequenceGenerator(name = "AppUserSequence", sequenceName = "AppUserSequence", allocationSize = 1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="AppUserSequence")
     private Integer id;
     private String email;
     private String password;
 
     public AppUser() {
     }
-
-
 
     public Integer getId() {
         return id;

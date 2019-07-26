@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+
+    <title> ABOUT </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+        type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .buildig-block {
+
+            margin-bottom: 16px;
+            padding: 5px;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+
+
+
+        .mycontainer {
+            padding: 0 16px;
+        }
+
+        .mycontainer::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .about-banner {
+            margin: 0px;
+            height: 200px;
+            background-size: cover;
+
+            position: relative;
+            font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+        }
+
+        .about-banner-over {
+            width: 100%;
+            height: 100%;
+            background-color: #212529e5;
+
+        }
+
+        .button {
+            color: #fff;
+            background-color: #ff6655;
+            width: 100%;
+            height: 30px;
+            border-radius: 3px;
+            outline: none !important;
+            border: none;
+        }
+
+        .button:hover {
+            color: #fff;
+            background-color: #f55948;
+            width: 100%;
+            height: 30px;
+            border-radius: 3px;
+            outline: none !important;
+            border: none;
+        }
+
+        .list {
+            padding: 20px;
+            background-color: #11CBD7;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+    <nav id="home-id" class="navbar navbar-default navbar-fixed-top">
+
+        <div class="container-fluid">
+
+            <!-- BRAND -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#alignment-example" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <p class="navbar-brand"
+                    style="margin: 0px;  color: #fed136;
+        font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; ">
+                    Hateya H.H.U high school</p>
+            </div>
+            <!-- COLLAPSIBLE NAVBAR -->
+            <div class="collapse navbar-collapse " id="alignment-example">
+                <!-- Links -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a class="active-opt">ABOUT</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle " data-toggle="dropdown" href="#"> CLASSES <span
+                        class="caret"></span></a>
+                    <ul class="dropdown-menu ">
+                      <li><a href="classes.html">CLASS-6</a></li>
+                      <li><a href="#">CLASS-7</a></li>
+                      <li><a href="#">CLASS-8</a></li>
+                      <li><a href="#">CLASS-9</a></li>
+                      <li><a href="#">CLASS-10</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">STAFF</a></li>
+                  <li><a href="#">LIBRARY</a></li>
+                  <li><a href="#">RESULT</a></li>
+                  <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="about-banner" th:style="'background: url(images/bk1.PNG) ; background-size: cover'" align="center">
+        <div class="about-banner-over">
+            <h1 style="padding-top: 80px; color: #fff;"> ABOUT US </h1>
+            <p style="padding-top: 8px; color: #fff;"> LET'S TRY TO KNOW ABOUY 'HATEYA H.H.U HIGH SCHOOL'.</p>
+        </div>
+    </div>
+
+
+
+
+    <div class="container" style="margin-top:30px; font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    ">
+
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>Basic Info : </h2>
+                <p style=" font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            " class="institute-auto-intro"><a href="">
+                        <strong>Hateya H.h.u.high School</strong>
+                    </a> is an academic institute located at Hateya Sakhipur
+                    <a href="">Tangail</a>.
+                    Its institute code (<strong>EIIN</strong>) is <strong>114596</strong> . It was established in 01
+                    Jan, 1964. Its co-education type is Combined. The institute has following 3 disciplines :
+                    Science, Business Studies, Humanities. Average exam passing rate of the institute is :
+                    <strong>JSC/Equivalent</strong></a>: 83.68%,<strong>SSC/Equivalent</strong>: 83.68%, Its <strong>MPO
+                        number is 4210061301</strong>. It has Day shift. Its management is Managing. </p>
+
+
+
+                <table style="margin-top: 20px 0 0 0px;" class="table table-bordered table-striped2">
+
+                    <tr>
+                        <td>Institute</td>
+                        <td>Hateya H.h.u.high School</td>
+                    </tr>
+                    <tr>
+                        <td>EIIN</td>
+                        <td>114596</td>
+                    </tr>
+                    <tr>
+                        <td>Founded</td>
+                        <td>01 January, 1964</td>
+                    </tr>
+                    <tr>
+                        <td>Board</td>
+                        <td>Dhaka</td>
+                    </tr>
+                    <tr>
+                        <td>Disciplines</td>
+                        <td>Science,Business Studies,Humanities</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>Secondary</td>
+                    </tr>
+                    <tr>
+                        <td>MPO Label</td>
+                        <td>Secondary</td>
+                    </tr>
+                    <tr>
+                        <td>MPO Number</td>
+                        <td>4210061301</td>
+                    </tr>
+                    <tr>
+                        <td>Co-education</td>
+                        <td>Combined</td>
+                    </tr>
+                    <tr>
+                        <td>Shift</td>
+                        <td>Day</td>
+                    </tr>
+                    <tr>
+                        <td>Management</td>
+                        <td>Managing</td>
+                    </tr>
+                    <tr>
+                        <td>Region</td>
+                        <td>Grameen</td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>Plain Land</td>
+                    </tr>
+                </table>
+
+
+
+            </div>
+
+            <div class="col-sm-4">
+
+                <h2>Infrastructure Info : </h2>
+                <p>
+                    The total area of <a href="">
+                        <strong>Hateya H.h.u.high School</strong>
+                    </a> is <strong> 3.69 Acres </strong> including Academic Building, Playground,
+                    Hostel and Teacher's Residence. Let's see the following table and progress chart to get details
+                    information about it.
+
+                </p>
+
+
+                <table class="table table-bordered">
+
+                    <tr>
+                        <td>
+                            Total Space
+                        </td>
+                        <td>
+                            3.69 Acres
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Academic Building
+                        </td>
+                        <td>
+                            0.21 Acres
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Playground
+                        </td>
+                        <td>
+                            0.93 Acres
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Student’s Hostel
+                        </td>
+                        <td>
+                            0.03 Acres
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Teacher’s Residence
+                        </td>
+                        <td>
+                            0.08 Acres
+                        </td>
+                    </tr>
+
+                </table>
+                <!--
+
+           
+                <div align="center" style="padding: 10px 0 10px 0 ; background: #f55948;">
+                    <h4 style="color: #fff;">
+                        Total Space
+                    </h4>
+                    <h4 style="color: #fff;">
+                        3.69 Acres
+                    </h4>
+                </div>
+                <div align="center" style="padding: 10px 0 10px 0 ; background: #4aee9c;">
+                    <h4 style="color: #fff;">
+                        Academic Building
+                    </h4>
+                    <h4 style="color: #fff;">
+                        0.21 Acres
+                    </h4>
+                </div>
+                <div align="center" style="padding: 10px 0 10px 0 ; background: #f55948;">
+                    <h4 style="color: #fff;">
+                        Playground
+                    </h4>
+                    <h4 style="color: #fff;">
+                        0.93 Acres
+                    </h4>
+                </div>
+                <div align="center" style="padding: 10px 0 10px 0 ; background: #4aee9c;">
+                    <h4 style="color: #fff;">
+                        Student’s Hostel
+                    </h4>
+                    <h4 style="color: #fff;">
+                        0.03 Acres
+                    </h4>
+                </div>
+                <div align="center" style="padding: 10px 0 10px 0 ; background: #f55948;">
+                    <h4 style="color: #fff;">
+                        Teacher’s Residence
+                    </h4>
+                    <h4 style="color: #fff;">
+                        0.08 Acres
+                    </h4>
+                </div>
+
+                     -->
+
+                <div>
+
+                    <div id="piechart"></div>
+
+
+                    <script type="text/javascript">
+                        // Load google charts
+                        google.charts.load('current', { 'packages': ['corechart'] });
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        // Draw the chart and set the chart values
+                        function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                                ['Task', 'Area'],
+                                ['Academic Building', 0.21],
+                                ['Playground', 0.93],
+                                ['Student’s Hostel', 0.03],
+                                ['Teacher’s Residence', 0.8]
+                            ]);
+
+                            // Optional; add a title and set the width and height of the chart
+                            var options = { 'title': 'Total Space with pie chart', 'width': 350, 'height': 300 };
+
+                            // Display the chart inside the <div> element with id="piechart"
+                            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                            chart.draw(data, options);
+                        }
+                    </script>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="container" style="margin-top: 10px; height: 70px;;">
+        <center>
+            <h2 class="text-uppercase header-text"> CLASSES </h2>
+        </center>
+    </div>
+
+
+
+    <div class="container" style="margin-top: 20px;">
+
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="images/cls6.jpg" alt="class-6" style="width:100%">
+                    <div class="mycontainer">
+                        <h3> CLASS-VI</h3>
+
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p><button class="button">Learn more...</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <img src="images/cls7.jpg" alt="Mike" style="width:100%">
+                    <div class="mycontainer">
+                        <h3> CLASS-VII</h3>
+
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p><button class="button">Learn more...</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+
+                <div class="card">
+                    <img src="images/cls8.jpg" alt="John" style="width:100%">
+                    <div class="mycontainer">
+                        <h3> CLASS-VIII</h3>
+
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p><button class="button">Learn more...</button></p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+
+                <div class="card">
+                    <img src="images/cls10.jpg" alt="John" style="width:100%">
+                    <div class="mycontainer">
+                        <h3> CLASS-IX,X</h3>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p><button class="button">Learn more...</button></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="container" style="margin-top: 10px; height: 70px;;">
+
+        <center>
+            <h2 class="text-uppercase header-text"> building </h2>
+        </center>
+    </div>
+
+
+
+    <!--BUILDING BLOCK-->
+    <div class="container" style="margin-top:20px;">
+
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="buildig-block">
+
+                    <img src="images/bk1.PNG"
+                        style=" float: left ;margin-right: 10px; margin-top:0px; border-radius: 3px; ; "
+                        class="img-thumbnail" width="40%" />
+                    <h4 style="padding: 0px; margin:0px 0px 5px 0px;">Academic Building - 01 </h4>
+                    <p style=" text-align: justify;
+                    text-justify: auto;"> sdggs lkgsh gsjhjh sljh s jgidshgi df giudf giudff giudf igudf ygui d
+                        dfg ihfdghfg
+                        hfgh
+                        fg
+                        hfg
+
+                        hfd dfiugiudos giuodsgtfiuouououououououououououououo diyfioudsyiufod yduis
+                        gh
+
+                        fghdui giod igdfio gidfiufdh iudfih dfiu hidufyiudffy iuodf yiuhofdyiuofdhiuofdyhfdiou hyiouyih
+                        fdh iu fgihyfig hfiou hyoifu hiuofd yhiuofy ioufgyio
+                        dfg
+                        dfg
+                        dfg
+                        df
+                        dfhgsjhgjsh jg hsjkg hshgjk sdh ig shdif ghdsfh gid hgi dssighdsiu iud
+                        giuodiu gi</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <img src="images/bk1.PNG"
+                    style=" float: left ;margin-right: 10px; margin-top:0px; border-radius: 3px; ; "
+                    class="img-thumbnail" width="40%" />
+                <h4 style="padding: 0px; margin:0px 0px 5px 0px;">Academic Building - 02 </h4>
+                <p style=" text-align: justify;
+                text-justify: auto;"> sdggs lkgsh gsjhjh sljh s jgidshgi df giudf giudff giudf igudf ygui d
+                    dfg ihfdghfg
+                    hfgh
+                    fg
+                    hfg
+
+                    hfd dfiugiudos giuodsgtfiuouououououououououououououo diyfioudsyiufod yduis
+                    gh
+
+                    fghdui giod igdfio gidfiufdh iudfih dfiu hidufyiudffy iuodf yiuhofdyiuofdhiuofdyhfdiou hyiouyih
+                    fdh iu fgihyfig hfiou hyoifu hiuofd yhiuofy ioufgyio
+                    dfg
+                    dfg
+                    dfg
+                    df
+                    dfhgsjhgjsh jg hsjkg hshgjk sdh ig shdif ghdsfh gid hgi dssighdsiu iud
+                    giuodiu gi</p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!--fotter-->
+    <footer>
+        <div class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="footer-content">
+                            <div class="footer-head">
+                                <div class="footer-logo">
+                                    <h4>Social media</h4>
+                                </div>
+
+                                <p>
+                                    You can connect with us by social media like facebook, twitter, etc. To connect
+                                    with
+                                    us by social media please visite the following link.
+
+
+                                </p>
+                                <div class="footer-icons">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-google"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end single footer -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="footer-content">
+                            <div class="footer-head">
+                                <h4>Information</h4>
+                                <p>
+                                    To more know about our school, you can contract with following mobile number or
+                                    email.
+                                </p>
+                                <div class="footer-contacts">
+                                    <p><span>Tel:</span> +88016 85 187164</p>
+                                    <p><span>Email:</span> contact@gamil.com</p>
+                                    <p><span>Working Hours:</span> 9am-5pm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end single footer -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="footer-content">
+                            <div class="footer-head">
+                                <h4>Photo gallery</h4>
+                                <div class="flicker-img">
+                                    <div class="raw">
+
+                                        <div class="col-xs-4">
+                                           <a href="photo_gallery.html">  <img style="cursor:pointer" class="img-thumbnail" src="images/portfolio/1.jpg" alt=""> </a>
+                                        </div>
+                                        <div  class="col-xs-4">
+                                            <a href="photo_gallery.html"> <img class="img-thumbnail" src="images/portfolio/2.jpg" alt=""> </a>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a href="photo_gallery.html"> <img class="img-thumbnail" src="images/portfolio/3.jpg" alt=""> </a>
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <a href="photo_gallery.html"> <img class="img-thumbnail" src="images/portfolio/4.jpg" alt=""> </a>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a href="photo_gallery.html">  <img class="img-thumbnail" src="images/portfolio/5.jpg" alt=""> </a>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a href="photo_gallery.html">  <img class="img-thumbnail" src="images/portfolio/6.jpg" alt=""> </a>
+                                        </div>
+                                        
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-area-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; Copyright <strong>Hateya H.H.U High School</strong>. All Rights Reserved
+                            </p>
+                        </div>
+                        <div class="credits">
+                            <!--
+                    All the links in the footer should remain intact.
+                    You can delete the links only if you purchased the pro version.
+                    Licensing information: https://bootstrapmade.com/license/
+                    Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
+                  -->
+                            Developed by <a href="https://bootstrapmade.com/">Abdullah-Al-Mamun</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>

@@ -31,7 +31,7 @@ public class DatabaseTableManagement {
 
         //List<User> users = new ArrayList<>();
 
-        Configuration configuration = new Configuration().configure("hibernate.cfg.xml");//.addAnnotatedClass(User.class);
+        Configuration configuration = new Configuration().configure();//.addAnnotatedClass(AppUser.class);
         SessionFactory sf = configuration.buildSessionFactory();
         Session session = sf.openSession();
 
@@ -41,12 +41,11 @@ public class DatabaseTableManagement {
             System.out.println("SF : " + sf);
             System.out.println("Session : " + session);
 
-            AppUser user = session.get(AppUser.class, 1);
-            AppUser user2 = session.get(AppUser.class, 2);
+           // AppUser user = session.get(AppUser.class, 1);
+            //AppUser user2 = session.get(AppUser.class, 2);
 
 
             List<AppUser> users = session.createQuery("FROM AppUser ", AppUser.class).list();
-
 
             modelMap.put("users", users);
 
@@ -91,7 +90,7 @@ public class DatabaseTableManagement {
         String e = "Ex : ";
         final AppUser user = new AppUser();
 
-        Configuration configuration = new Configuration().configure();//.addAnnotatedClass(User.class);
+        Configuration configuration = new Configuration().configure("hibernate.cfg.xml");//.addAnnotatedClass(AppUser.class);
         SessionFactory sf = configuration.buildSessionFactory();
         Session session = sf.openSession();
 

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
-    <title>LOGIN | CPANEL</title>
+    <title>LOGIN | CPANEL </title>
 
     <link rel="shortcut icon" type="image/x-icon" href="images/cpanel.png" />
     <meta charset="utf-8">
@@ -17,6 +17,93 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
         type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+
+
+    <script>
+
+
+        function searchText2() {
+            $.get("/access_class",{cls:6} ,function (data, status) {
+                alert(data);
+            });
+        }
+
+
+
+
+        $(document).ready(function(){
+
+            searchText2();
+
+            $("#postData").click(function(){
+                searchText();
+            });
+
+            $("#getData").click(function () {
+                searchText2();
+            });
+
+
+
+
+            /*
+            function searchText() {
+                var AppUser = {
+                    "id":1,
+                    "email": "email@gmail.com",
+                    "password": "mypass"
+                }
+                $.ajax({
+                    type: "POST",
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    url: "/data",
+                    data: JSON.stringify(AppUser), // Note : it is important
+                    success: function (result) {
+                        alert(result.toString()+"good luck......");
+                    },
+                    error: function (e) {
+                        alert(e.toString());
+                    }
+                });
+            }
+            */
+
+
+            /*
+            function searchText2() {
+                $.ajax({
+                    type: "GET",
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    url: "/data2",
+                    //data: JSON.stringify(AppUser), // Note it is important
+                    success: function (result) {
+                        alert(result.toString()+"good luck......");
+                    },
+                    error: function (e) {
+                        alert(e.toString());
+                    }
+                });
+            }
+            */
+
+
+
+           // alert("Hello...");
+        });
+
+
+
+
+    </script>
+
+
+
+
+
+
 
 </head>
 
@@ -57,6 +144,18 @@
         </div>
 
     </center>
+
+
+
+
+
+
+
+
+    <button id="postData" style="margin-top:20px;">Send data to controller</button>
+    <button id="getData" style="margin-top:20px;">Click to get Data</button>
+
+
 
 
 

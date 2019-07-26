@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
-  <title> HOME PAGE </title>
+  <title>Bootstrap Example</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,33 +17,6 @@
     type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-
-
-  <script>
-
-    $(document).ready(function () {
-
-      $(".menubtn").click(function () {
-        $(".menu-items").toggle(400);
-      });
-
-    });
-
-    $(document).ready(function () {
-
-      $("#sub-menu").hover(function () {
-
-      });
-
-
-
-
-    });
-
-
-
-  </script>
 
 </head>
 
@@ -78,22 +51,22 @@
       <div class="collapse navbar-collapse " id="alignment-example">
         <!-- Links -->
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="active-opt" href="index.html">HOME</a></li>
-          <li><a href="/about">ABOUT</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
           <li class="dropdown"><a class="dropdown-toggle " data-toggle="dropdown" > CLASSES <span
                 class="caret"></span></a>
             <ul class="dropdown-menu ">
-              <li><a href="/class-6">CLASS-6</a></li>
-              <li><a href="/class-7">CLASS-7</a></li>
-              <li><a href="/class-8">CLASS-8</a></li>
-              <li><a href="class-9">CLASS-9</a></li>
-              <li><a href="/class-10">CLASS-10</a></li>
+              <li><a th:class="${access_class==6} ? 'active-opt' : 'null'" href="/class-6">CLASS-6</a></li>
+              <li><a th:class="${access_class==7} ? 'active-opt' : 'null'" href="/class-7">CLASS-7</a></li>
+              <li><a th:class="${access_class==8} ? 'active-opt' : 'null'" href="/class-8">CLASS-8</a></li>
+              <li><a th:class="${access_class==9} ? 'active-opt' : 'null'" href="/class-9">CLASS-9</a></li>
+              <li><a th:class="${access_class==10} ? 'active-opt' : 'null'" href="/class-10">CLASS-10</a></li>
             </ul>
           </li>
           <li><a href="#">STAFF</a></li>
           <li><a href="#">LIBRARY</a></li>
           <li><a href="#">RESULT</a></li>
-          <li><a href="contact.html">CONTACT</a></li>
+          <li><a class="active-opt" >CONTACT</a></li>
         </ul>
 
       </div>
@@ -106,73 +79,57 @@
 
 
 
-  <!--th:style="'background: url(images/bk1.PNG) ; background-size: cover'"-->
-  <div class="banner-div"th:style="'background: url(images/bk1.PNG) ; background-size: cover'">
-    <div align="center" class="banner-overlay ">
-      <h1 style="margin-top: 200px; color: #fff;"> WELCOME TO</h1>
-      <h1 style="color: #fff;"> HATEYA H.H.U HIGH SCHOOL </h1>
-      <p style="color: #fff; padding: 0px 50px 0px 50px;"> An academic institute located at Hateya Sakhipur, Tangail.
-        Established in 01 Jan, 1964. EIIN : 114596</p>
-      <form action="photo_gallery.html">
-        <button onclick="window.location.href='photo_gallery.html'" class="tour-btn" type="button">PHOTO
-          GALLERY</button>
-      </form>
+
+  <!-- Contact -->
+  <section class="page-section" id="contact" th:style="'background-image: url(images/map-image.png) ;'">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Contact Us</h2>
+          <h3 class=" text-muted" style="padding: 0px 0px 20px 0px; font-size:17px;">Please fillup the following gap and
+            send it to us.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <form id="contactForm" name="sentMessage" method="POST">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input class="form-control" name="name" type="text" placeholder="Your Name *" required="true">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" name="email" type="email" placeholder="Your Email *" required
+                    data-validation-required-message="Please enter your email address.">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" name="phone" type="tel" placeholder="Your Phone *" required
+                    data-validation-required-message="Please enter your phone number.">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <textarea class="form-control" id="message" placeholder="Your Message *" required
+                    data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-lg-12 text-center">
+                <div id="success"></div>
+                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send
+                  Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
-
-
-
-  <br>
-
-
-
-
-
-  <div class="container " style="margin-top: 50px;">
-
-    <div class="row text-center">
-
-      <div class="col-sm-6 col-lg-3  col-xs-12 cls-info">
-        <div class="cls-info-div">
-          <p style="font-size: 40px; padding:30px  0px 0px 0px; color:#555;"> VI </p>
-          <h4>CLASS - 6</h4>
-          <hr />
-          <p>hfghdl dhodho d o ihj</p>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-3  col-xs-12 cls-info">
-        <div class="cls-info-div">
-          <p style="font-size: 40px; padding:30px  0px 0px 0px; color:#555;"> VII </p>
-          <h4>CLASS - 7</h4>
-          <hr />
-          <p>hfghdl dhodho d o ihj</p>
-        </div>
-      </div>
-
-
-      <div class="col-sm-6 col-lg-3  col-xs-12 cls-info">
-        <div class="cls-info-div">
-          <p style="font-size: 40px; padding:30px  0px 0px 0px; color:#555;"> VIII </p>
-          <h4>CLASS - 8</h4>
-          <hr />
-          <p>hfghdl dhodho d o ihj</p>
-        </div>
-      </div>
-
-
-      <div class="col-sm-6 col-lg-3 col-xs-12 cls-info">
-        <div class="cls-info-div">
-          <p style="font-size: 40px; padding:30px  0px 0px 0px; color:#555;"> IX & X </p>
-          <h4>CLASS - 9 & 10</h4>
-          <hr />
-          <p>hfghdl dhodho d o ihj</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
+  </section>
 
 
 
@@ -239,32 +196,27 @@
               <div class="footer-head">
                 <h4>Photo gallery</h4>
                 <div class="flicker-img">
-
                   <div class="raw">
-
                     <div class="col-xs-4">
-                      <a href="photo_gallery.html"> <img style="cursor:pointer" class="img-thumbnail"
-                          src="images/portfolio/1.jpg" alt=""> </a>
+                      <img class="img-thumbnail" src="images/portfolio/1.jpg" alt="">
                     </div>
                     <div class="col-xs-4">
-                      <a href="photo_gallery.html"> <img class="img-thumbnail" src="images/portfolio/2.jpg" alt=""> </a>
+                      <img class="img-thumbnail" src="images/portfolio/2.jpg" alt="">
                     </div>
                     <div class="col-xs-4">
-                      <a href="photo_gallery.html"> <img class="img-thumbnail" src="images/portfolio/3.jpg" alt=""> </a>
+                      <img class="img-thumbnail" src="images/portfolio/3.jpg" alt="">
                     </div>
 
                     <div class="col-xs-4">
-                      <a href="photo_gallery.html"> <img class="img-thumbnail" src="images/portfolio/4.jpg" alt=""> </a>
+                      <img class="img-thumbnail" src="images/portfolio/4.jpg" alt="">
                     </div>
                     <div class="col-xs-4">
-                      <a href="photo_gallery.html"> <img class="img-thumbnail" src="images/portfolio/5.jpg" alt=""> </a>
+                      <img class="img-thumbnail" src="images/portfolio/5.jpg" alt="">
                     </div>
                     <div class="col-xs-4">
-                      <a href="photo_gallery.html"> <img class="img-thumbnail" src="images/portfolio/6.jpg" alt=""> </a>
+                      <img class="img-thumbnail" src="images/portfolio/6.jpg" alt="">
                     </div>
-
                   </div>
-
 
                 </div>
               </div>
@@ -284,11 +236,11 @@
             </div>
             <div class="credits">
               <!--
-                  All the links in the footer should remain intact.
-                  You can delete the links only if you purchased the pro version.
-                  Licensing information: https://bootstrapmade.com/license/
-                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
-                -->
+                    All the links in the footer should remain intact.
+                    You can delete the links only if you purchased the pro version.
+                    Licensing information: https://bootstrapmade.com/license/
+                    Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
+                  -->
               Developed by <a href="https://bootstrapmade.com/">Abdullah-Al-Mamun</a>
             </div>
           </div>
@@ -296,6 +248,8 @@
       </div>
     </div>
   </footer>
+
+
 
 
 

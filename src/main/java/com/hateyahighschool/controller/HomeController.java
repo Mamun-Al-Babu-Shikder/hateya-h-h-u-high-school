@@ -28,6 +28,7 @@ public class HomeController {
 
     @RequestMapping(value = "/")
     public String home(Model model){
+        model.addAttribute("url","images/bk1.PNG");
         return "index";
     }
 

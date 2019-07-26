@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Bootstrap Example</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="cpanel_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+        type='text/css'>
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+
+    <script>
+
+        /*------FETCH BOOK---------*/
+
+
+            function getBookList(cls)
+            {
+                //alert("Selected Class : "+cls);
+               // console.log("loading on............");
+                $("#loader").show();
+                $.get("access_class", {
+                        cls : cls
+                    },
+                    function(data, status){
+
+                        //console.log("loading off............");
+                        $("#loader").hide(150);
+                        //alert("Data : "+data+", Status : "+status);
+                        if(data!=null){
+
+                            tblRow = "";
+                            index = Object.keys(data);
+                            for(i=0;i<index.length;i++){
+
+                                valueSet = Object.values(data)[i];
+                                //alert(Object.keys(valueSet)[i]);
+                                id = valueSet["id"];
+                                name = valueSet["bookName"];
+                                pdfLink = valueSet["pdfFileLink"];
+
+                                tblRow+="<tr>";
+                                tblRow+="<td>"+(i+1)+"</td>";
+                                tblRow+="<td>"+name+"</td>";
+                                tblRow+= "<td style='text-align: center;'> <a target='_blank' href="+pdfLink+"><img width='25px;' src='images/pdf.png'></a> </td>";
+                                tblRow+= "<td style='text-align: center'> <input type='button' class='button-delete' onclick='deleteBook("+id+")' value='Delete' /> </td>";
+                            }
+
+                            $("#bookRefTblBody").empty();
+                            $("#bookRefTblBody").append(tblRow);
+                        }
+
+                    });
+            }
+
+
+
+            function saveBook() {
+
+               bookName = $("#bookName").val();
+               pdfLink = $("#pdfLink").val();
+
+               alert(bookName);
+
+               if(bookName.length==0 || pdfLink.length==0){
+                   alert("Please enter Book Name and pdf link.")
+               }else{
+
+                   cls = $("#selectedClass").val();
+                   $("#loader").show();
+                   $.post("save_book",{
+                       bookName: bookName,
+                       pdfLink: pdfLink,
+                       forClass: cls
+                   }, function(data, status){
+                       $("#loader").hide(150);
+                       //alert(data+", "+status);
+                       if(data){
+                          $("#bookName").val("");
+                          $("#pdfLink").val("");
+                          getBookList(cls);
+                           //alert("Book successfully saved !");
+                       }else{
+                          // alert("Failed to saved book !");
+                       }
+                   });
+                  // alert(bookName+", "+pdfLink);
+               }
+
+
+
+
+            }
+
+
+
+        function deleteBook(v) {
+            alert("Delete Book Id : "+v);
+        }
+
+
+
+
+        $(document).ready(function(){
+            getBookList(6);
+        });
+
+
+        function searchClass(){
+            cls = $("#selectedClass").val();
+            getBookList(cls);
+        }
+
+
+
+
+    </script>
+
+
+
+</head>
+
+<body style="top:0">
+
+
+
+   <div id="loader" class="overlay">
+
+       <center>
+           <img style="margin-top:150px;" class="img-load" width="30%;" src="images/loading_02.gif" />
+       </center>
+
+   </div>
+
+
+
+    <div class="side-menu">
+
+        <div align="center">
+            <img class="logo" src="images/user3.png" />
+            <p style="font-size: 12px ;color: rgb(224, 230, 233); margin: 0px; padding: 0px;"> Hateya H.H.U Higth School
+            </p>
+            <p style="font-size: 12px ;color: rgb(166, 172, 175); margin: 0px; padding: 0px;"> Admin Panel </p>
+        </div>
+
+        <h5
+            style="border-radius: 0;background: #22C5F6; padding-left: 20px; height: 35px; color: #fff; padding-top: 10px;">
+            Option Menu
+        </h5>
+
+
+        <ul>
+            <li> <a href="#"> <i class="fa fa-home"> </i> Home </a> </li>
+            <li> <a href="#"> <i style="padding: 0 5px;" class="fa fa-info"> </i> About Us </a> </li>
+            <li class="active-option"> <a href="#"> <i style="padding: 0 5px;" class="fa fa-graduation-cap"></i> Class
+                </a> </li>
+            <li> <a href="#"> <i style="padding: 0 5px;" class="fa fa-users"> </i> Staff </a> </li>
+            <li> <a href="#"> <i style="padding: 0 5px;" class="fa fa-book"> </i> Library </a> </li>
+            <li> <a href="#"> <i style="padding: 0 5px;" class="fa fa-bar-chart"> </i> Result </a> </li>
+            <li> <a href="#"> <i style="padding: 0 5px;" class="fa fa-address-book"> </i> Contact </a> </li>
+            <li> <a href="#"> <i style="padding: 0 5px;" class="fa fa-image"></i> Image Gallery </a> </li>
+
+        </ul>
+
+
+
+    </div>
+
+
+
+
+    <div class="main">
+
+
+
+
+
+
+        <div class="top-bar">
+            <div class="container">
+                <h6
+                    style="color: rgba(68, 171, 255, 0.692);padding: 10px 20px; float : left; text-transform: uppercase;">
+                    Welcome to Hatrya H.H.U high School Admin Panel
+                </h6>
+                <a href="/logout" class="logout-btn"> <i class="fa fa-sign-out"></i> Logout </a>
+            </div>
+        </div>
+
+
+
+        <div class="container" style="margin-top:75px;">
+
+
+            <div style="width:40%; float: left;">
+
+                <div class="card-view">
+
+
+
+                        <label>Select class :</label>
+                        <div class="form-group">
+
+                            <select  style="width: 77%; float: left; " class="form-control input-box" id="selectedClass" name="select_class">
+
+                                <option value="6">Access Class - 06</option>
+                                <option value="7">Access Class - 07</option>
+                                <option value="8">Access Class - 08</option>
+                                <option value="9">Access Class - 09</option>
+                                <option value="10">Access Class - 10</option>
+
+                                <!--
+                                <div th:if="${access_class==6}">
+                                    <option selected>Access Class - 06</option>
+                                    <option>Access Class - 07</option>
+                                    <option>Access Class - 08</option>
+                                    <option>Access Class - 09</option>
+                                    <option>Access Class - 10</option>
+                                </div>
+
+                                <div th:if="${access_class==7}">
+                                    <option>Access Class - 06</option>
+                                    <option selected>Access Class - 07</option>
+                                    <option>Access Class - 08</option>
+                                    <option>Access Class - 09</option>
+                                    <option>Access Class - 10</option>
+                                </div>
+
+                                <div th:if="${access_class==8}">
+                                    <option>Access Class - 06</option>
+                                    <option>Access Class - 07</option>
+                                    <option selected>Access Class - 08</option>
+                                    <option>Access Class - 09</option>
+                                    <option>Access Class - 10</option>
+                                </div>
+
+                                <div th:if="${access_class==9}">
+                                    <option>Access Class - 06</option>
+                                    <option>Access Class - 07</option>
+                                    <option>Access Class - 08</option>
+                                    <option selected>Access Class - 09</option>
+                                    <option>Access Class - 10</option>
+                                </div>
+
+                                <div th:if="${access_class==10}">
+                                    <option>Access Class - 06</option>
+                                    <option>Access Class - 07</option>
+                                    <option>Access Class - 08</option>
+                                    <option>Access Class - 09</option>
+                                    <option selected>Access Class - 10</option>
+                                </div>
+                              -->
+
+
+
+                            </select>
+
+                            <input style="width: 20%; float: left; margin-left: 10px;" type="submit" 
+                            class="btn btn-primary" id="bookSaveBtn" onclick="searchClass()" value="Search">
+
+                        </div>
+
+
+
+                </div>
+
+            </div>
+
+            <div style="width:58%; float: left;;">
+
+                <div class="card-view">
+
+                    <form>
+                        <div class="form-group" >
+                            <label>Enter Syllabus Link :</label>
+                            <div>
+                                <input style="width: 88%;float: left" class="form-control input-box" type="text"
+                                    placeholder="Enter syllabus file link" required >
+                                    
+                                <input style="width: 10%; float: left; margin-left: 10px;" type="submit" 
+                                    class="btn btn-primary" value="Save">
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="container" style="margin-top: 15px;">
+
+            <div style="width:98%; float: left;">
+
+                <div class="card-view">
+
+                    <h4 style="color:#00D591; float: left; width: 90%;">Add book reference </h4>
+                    <div style="width: 10% ; float: left">
+                        <i style=" padding: 10px 10px; background: #DBDEFD; color: #6E78F5; border-radius: 2px; float: right"
+                            class="fa fa-book"> </i>
+
+                    </div>
+                    <div>
+
+
+
+
+                            <input id="bookName" class="input-box"  type="text" style="width: 30%" placeholder="Enter book name"
+                                   required />
+                            <input id="pdfLink" class="input-box" type="url" style="width: 40%; margin-left: 15px;"
+                                   placeholder="Enter book file link" required />
+                            <input class="button" type="submit" style="width: 7%" value="Save" onclick="saveBook()" />
+
+
+
+
+
+
+                        <table class=" table table-striped "  style="margin-top: 15px;">
+
+                            <thead>
+                            <tr>
+                                <th>
+                                    SL NO.
+                                </th>
+                                <th>
+                                    Name of book
+                                </th>
+                                <th style="text-align: center;">
+                                    PDF file
+                                </th>
+                                <th style="text-align: center;">
+                                    Delete
+                                </th>
+                            </tr>
+                            </thead>
+
+                            <tbody id="bookRefTblBody">
+
+                            </tbody>
+
+
+
+
+
+
+                            <!--
+                            <tr th:each="data : ${bookList}">
+
+                                <td th:text="${data.getId()}"/>
+
+                                <td th:text="${data.getBookName()}" />
+
+                                <td style="text-align: center;">
+                                    <a th:href="${data.getPdfFileLink()}"><img width="25px;" src="images/pdf.png"></a>
+                                </td>
+                                <td style="text-align: center">
+                                    <input type="button" class="button-delete" value="Delete" />
+                                </td>
+
+                            </tr>
+                            -->
+
+
+
+
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="container" style="margin-top: 15px;">
+
+            <div style="width:98%; float: left;">
+
+                <div class="card-view">
+
+                    <h4 style="color:#00D591; float: left; width: 90%;">Class routine</h4>
+                    <div style="width: 10% ; float: left">
+                        <i style=" padding: 10px 10px; background: #DBDEFD; color: #6E78F5; border-radius: 2px; float: right"
+                            class="fa fa-outdent"> </i>
+
+                    </div>
+                    <div style="margin-top:20px;">
+
+                        <!-- <form>
+
+                            <input class="input-box" type="text" style="width: 15%" placeholder="Enter book name" />
+                            <input class="input-box" type="text" style="width: 15%" style="margin-left: 15px;"
+                                placeholder="Enter book file link" />
+                            <input class="input-box" type="text" style="width: 15%" placeholder="Enter book name" />
+                            <input class="input-box" type="text" style="width: 15%" style="margin-left: 15px;"
+                                placeholder="Enter book file link" />
+                                <input class="input-box" type="text" style="width: 15%" style="margin-left: 15px;"
+                                placeholder="Enter book file link" />
+                                <input class="input-box" type="text" style="width: 15%" style="margin-left: 15px;"
+                                placeholder="Enter book file link" />
+                            <input class="button" type="submit" style="width: 10%; margin-top:10px;" value="Update" />
+
+                        </form> -->
+
+                        <table class="table table-striped ">
+
+
+
+
+                            <tr>
+                                <th>Day/Hour</th>
+                                <th style="text-align: center;">1st</th>
+                                <th style="text-align: center;">2nd</th>
+                                <th style="text-align: center;">3rd</th>
+                                <th style="text-align: center;">4th</th>
+                                <th style="text-align: center;">5th</th>
+                                <th style="text-align: center;">6th</th>
+                                <th style="text-align: center;">
+                                    Edit
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <td style="text-align: center">
+                                    <strong>SAT</strong>
+                                </td>
+                                <td>
+                                    আনন্দ পাঠ(বাংলা দ্রুত পঠন)
+                                </td>
+                                <td>
+                                    গণিত
+                                </td>
+                                <td>
+                                    English for Today
+                                </td>
+                                <td>
+                                    বাংলা ব্যাকরণ ও নির্মিতি
+                                </td>
+                                <td>
+                                    আনন্দ পাঠ(বাংলা দ্রুত পঠন)
+                                </td>
+                                <td>
+                                    গণিত
+                                </td>
+                                <td style="text-align: center">
+                                    <input type="button" class="button-edit" value="Edit" />
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td style="text-align: center">
+                                    <strong>SUN</strong>
+                                </td>
+                                <td>
+                                    আনন্দ পাঠ(বাংলা দ্রুত পঠন)
+                                </td>
+                                <td>
+                                    গণিত
+                                </td>
+                                <td>
+                                    English for Today
+                                </td>
+                                <td>
+                                    বাংলা ব্যাকরণ ও নির্মিতি
+                                </td>
+                                <td>
+                                    আনন্দ পাঠ(বাংলা দ্রুত পঠন)
+                                </td>
+                                <td>
+                                    গণিত
+                                </td>
+                                <td style="text-align: center">
+                                    <input type="button" class="button-edit" value="Edit" />
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td style="text-align: center">
+                                    <strong>MON</strong>
+                                </td>
+                                <td>
+                                    আনন্দ পাঠ(বাংলা দ্রুত পঠন)
+                                </td>
+                                <td>
+                                    গণিত
+                                </td>
+                                <td>
+                                    English for Today
+                                </td>
+                                <td>
+                                    বাংলা ব্যাকরণ ও নির্মিতি
+                                </td>
+                                <td>
+                                    আনন্দ পাঠ(বাংলা দ্রুত পঠন)
+                                </td>
+                                <td>
+                                    গণিত
+                                </td>
+                                <td style="text-align: center">
+                                    <input type="button" class="button-edit" value="Edit" />
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td style="text-align: center">
+                                    <strong>TWE</strong>
+                                </td>
+                                <td>
+                                    আনন্দ পাঠ(বাংলা দ্রুত পঠন)
+                                </td>
+                                <td>
+                                    গণিত
+                                </td>
+                                <td>
+                                    English for Today
+                                </td>
+                                <td>
+                                    বাংলা ব্যাকরণ ও নির্মিতি
+                                </td>
+                                <td>
+                                    আনন্দ পাঠ(বাংলা দ্রুত পঠন)
+                                </td>
+                                <td>
+                                    গণিত
+                                </td>
+                                <td style="text-align: center">
+                                    <input type="button" class="button-edit" value="Edit" />
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+                                <td style="text-align: center">
+                                    <strong>WED</strong>
+                                </td>
+                                <td>
+                                    আনন্দ পাঠ(বাংলা দ্রুত পঠন)
+                                </td>
+                                <td>
+                                    গণিত
+                                </td>
+                                <td>
+                                    English for Today
+                                </td>
+                                <td>
+                                    বাংলা ব্যাকরণ ও নির্মিতি
+                                </td>
+                                <td>
+                                    আনন্দ পাঠ(বাংলা দ্রুত পঠন)
+                                </td>
+                                <td>
+                                    গণিত
+                                </td>
+                                <td style="text-align: center">
+                                    <input type="button" class="button-edit" value="Edit" />
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td style="text-align: center">
+                                    <strong>THU</strong>
+                                </td>
+                                <td>
+                                    আনন্দ পাঠ(বাংলা দ্রুত পঠন)
+                                </td>
+                                <td>
+                                    গণিত
+                                </td>
+                                <td>
+                                    English for Today
+                                </td>
+                                <td>
+                                    বাংলা ব্যাকরণ ও নির্মিতি
+                                </td>
+                                <td>
+                                    আনন্দ পাঠ(বাংলা দ্রুত পঠন)
+                                </td>
+                                <td>
+                                    গণিত
+                                </td>
+                                <td style="text-align: center">
+                                    <input type="button" class="button-edit" value="Edit" />
+                                </td>
+
+                            </tr>
+
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="container" style="margin-top: 15px;">
+
+            <div style="width:98%; float: left;">
+
+                <div class="card-view">
+
+                    <h4 style="color:#00D591; float: left; width: 90%;"> Exam routine </h4>
+                    <div style="width: 10% ; float: left">
+                        <i style=" padding: 10px 10px; background: #DBDEFD; color: #6E78F5; border-radius: 2px; float: right"
+                            class="fa fa-calendar"> </i>
+
+                    </div>
+                    <div>
+
+                        <form>
+
+                            <input class="input-box" type="date" style="width: 23%" placeholder="Enter book name"
+                                required />
+                            <input class="input-box" type="text" style="width: 23%; margin-left: 15px;"
+                                placeholder="Enter book file link" required />
+                            <input class="input-box" type="time" style="width: 23%" placeholder="Enter subject name"
+                                required />
+                            <input class="input-box" type="time" style="width: 22%; margin-left: 15px;"
+                                placeholder="Enter book file link" required />
+
+                            <input class="button" type="submit" style="width: 7%; margin-top:10px;" value="Save" />
+
+                        </form>
+
+                        <table class="table table-striped " style="margin-top: 15px;">
+
+                            <tr>
+                                <th>
+                                    Date
+                                </th>
+                                <th>
+                                    Subject
+                                </th>
+                                <th style="text-align: center;">
+                                    Start Time
+                                </th>
+                                <th style="text-align: center;">
+                                    End Time
+                                </th>
+                                <th style="text-align: center;">
+                                    Edit
+                                </th>
+                                <th style="text-align: center;">
+                                    Delete
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    02/08/2019
+                                </td>
+                                <td>
+                                    বাংলা ব্যাকরণ ও নির্মিতি
+                                </td>
+                                <td style="text-align: center;">
+                                    02:00 PM
+                                </td>
+                                <td style="text-align: center;">
+                                    05:00 PM
+                                </td>
+                                <td style="text-align: center">
+                                    <input type="button" class="button-edit" value="   Edit  " />
+                                </td>
+                                <td style="text-align: center">
+                                    <input type="button" class="button-delete" value="Delete" />
+                                </td>
+
+                            </tr>
+
+                        </table>
+
+
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="container" style="margin-top: 15px; margin-bottom: 20px;">
+
+
+            <div style="width:49%; float: left;">
+
+                <div class="card-view">
+
+                    <h4 style="color:#00D591; float: left; width: 90%;">Add Class Lecture </h4>
+                    <div style="width: 10% ; float: left">
+                        <i style=" padding: 10px 10px; background: #DBDEFD; color: #6E78F5; border-radius: 2px; float: right"
+                            class="fa fa-youtube"> </i>
+
+                    </div>
+                    <div>
+
+                        <form>
+
+                            <input class="input-box" type="text" style="width: 25%" placeholder="Enter lecture id"
+                                required />
+                            <input class="input-box" type="text" style="width: 58%; margin-left: 15px;"
+                                placeholder="Enter title" required />
+                            <input class="button" type="submit" style="width: 15%; margin-top:10px;" value="Save" />
+
+                        </form>
+
+                        <table class="table table-striped " style="margin-top: 15px;">
+
+                            <tr>
+                                <th>
+                                    SL NO.
+                                </th>
+                                <th>
+                                    Lecture Id
+                                </th>
+                                <th style="text-align: center;">
+                                    Title
+                                </th>
+                                <th style="text-align: center;">
+                                    Delete
+                                </th>
+
+                            <tr>
+                                <td>
+                                    01
+                                </td>
+                                <td style="text-align: center">
+                                    QcJnSKk02Os
+                                </td>
+                                <td >
+                                    TOP 26 BOLLYWOOD HINDI SAD SONGS PLAYLIST 2018 // Top Heart Broken Hindi, INDIAN Sad Songs Jukebox
+                                </td>
+                                <td style="text-align: center">
+                                    <input type="button" class="button-delete" value="Delete" />
+                                </td>
+                            </tr>
+
+                        
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div style="width:49%; float: left;">
+
+                <div class="card-view">
+
+                    <h4 style="color:#00D591; float: left; width: 90%;">Add Exam Result </h4>
+                    <div style="width: 10% ; float: left">
+                        <i style=" padding: 10px 10px; background: #DBDEFD; color: #6E78F5; border-radius: 2px; float: right"
+                            class="fa fa-bar-chart"> </i>
+
+                    </div>
+                    <div>
+
+                        <form>
+
+                            <input class="input-box" type="text" style="width: 41%" placeholder="Enter PDF File Name"
+                                required />
+                            <input class="input-box" type="url" style="width: 42%; margin-left: 15px;"
+                                placeholder="Enter PDF File link" required />
+                            <input class="button" type="submit" style="width: 15%; margin-top:10px;" value="Save" />
+
+                        </form>
+
+                        <table class="table table-striped " style="margin-top: 15px;">
+
+                            <tr>
+                                <th>
+                                    SL NO.
+                                </th>
+                                <th>
+                                    Title
+                                </th>
+                                <th style="text-align: center;">
+                                    PDF file
+                                </th>
+                                <th style="text-align: center;">
+                                    Delete
+                                </th>
+
+                            <tr>
+                                <td>
+                                    01
+                                </td>
+                                <td>
+                                    Final result class-6 (2019)
+                                </td>
+                                <td style="text-align: center;">
+                                    <a href="#"><img width="25px;" src="images/pdf.png"></a>
+                                </td>
+                                <td style="text-align: center">
+                                    <input type="button" class="button-delete" value="Delete" />
+                                </td>
+                            </tr>
+
+                           
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
