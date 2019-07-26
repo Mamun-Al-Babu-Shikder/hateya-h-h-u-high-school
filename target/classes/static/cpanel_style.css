@@ -1,0 +1,221 @@
+
+body{
+    background: #FAFBFE;
+    overflow-x: hidden;
+}
+
+.button{
+    margin-left: 2px;
+    outline: none !important;
+    border: none !important;
+    padding: 7px 5px;
+    font-size: 13px;
+    border-radius: 3px;
+    background: #156bb6;
+    color: #fff;
+}
+
+.button:hover{
+    margin-left: 2px;
+    outline: none !important;
+    border: none !important;
+    padding: 7px 5px;
+    font-size: 13px;
+    border-radius: 3px;
+    background: #286090;
+    color: #fff;
+    transition: 0.3s
+}
+
+.button-delete{
+    margin-left: 3px;
+    outline: none !important;
+    border: none !important;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 3px;
+ background: rgb(223, 11, 11);
+ color: #fff;
+
+}
+
+
+.button-delete:hover{
+    margin-left: 3px;
+    outline: none !important;
+    border: none !important;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 3px;
+ background: rgb(192, 14, 14);
+ color: #fff;
+ transition: 0.3s;
+
+}
+
+
+.button-edit{
+    margin-left: 2px;
+    outline: none !important;
+    border: none !important;
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 3px;
+    background: rgb(19, 180, 185);
+    color: #fff;
+}
+
+.button-edit:hover{
+    margin-left: 2px;
+    outline: none !important;
+    border: none !important;
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 3px;
+    background: rgb(12, 134, 138);
+    color: #fff;
+    transition: 0.3s;
+}
+
+
+
+.card-view{
+    overflow: hidden;
+    border-radius: 1px;
+    background: #fff;
+    margin: 10px;
+    padding: 15px 20px;
+    box-shadow: 1px 2px 5px 2px #F1F3FA;
+}
+
+
+.input-box{
+    outline: none !important;
+    
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    background: #F1F3FA;
+    border: 1px solid rgb(223, 223, 223);
+}
+
+.logo{
+    margin: 20px 0;
+    width: 25%;
+    height: auto;
+    border-radius: 100%;
+}
+
+.logout-btn{
+
+    color: #fff;
+    float: right;
+    margin: 10px 10px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background: #22C5F6;
+
+}
+
+.logout-btn:hover{
+
+    color: #fff;
+    float: right;
+    margin: 10px 10px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    background: rgb(15, 174, 223);
+
+}
+
+.main{
+    top:0;
+    margin-left: 200px;
+    width: auto;
+    height: 100%;
+    float: left;
+}
+
+th{
+    color: #AE99F5;
+
+}
+
+
+
+.top-bar{
+   position: fixed;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 5px 1px 5px 2px #F1F3FA;
+ }
+
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+ul li{
+
+    padding: 10px;
+    margin: 0px;
+
+    list-style: none;
+}
+
+ul li:hover{
+
+    padding: 10px;
+    margin: 0px;
+    background: #000;
+    cursor: pointer;
+    list-style: none;
+    transition: 0.5s;
+}
+
+.active-option{
+    border-left: 3px solid #22C5F6;
+    padding: 10px;
+    margin: 0px;
+    background: #000;
+    list-style: none;
+}
+
+ul li a{
+    width: 100%;
+    list-style: none;
+    color: rgb(230, 230, 230);
+    text-decoration: none;
+}
+
+ul li a:hover{
+    width: 100%;
+    list-style: none;
+    color: rgb(230, 230, 230);
+    text-decoration: none;
+}
+
+
+.side-menu{
+   width: 200px;
+   height: 100%;
+   float: left;
+   background: #2F4050;
+   position: fixed;
+   
+}
+
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
